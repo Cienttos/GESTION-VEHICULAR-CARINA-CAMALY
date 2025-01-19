@@ -30,7 +30,6 @@
 <body>
 	<div class="background-animation" id="background-animation"></div>
 	<header class="relative w-screen h-screen overflow-hidden" style="background: radial-gradient(circle, rgba(247,251,253,0) 69%, rgba(79,174,212,1) 95%);">
-		<!-- Video de fondo con clip-path similar a la imagen -->
 		<video id="backgroundVideo" autoplay loop muted class="absolute inset-0 w-full h-full object-cover" style="clip-path: polygon(50% 5%, 75% 0, 100% 20%, 100% 79%, 80% 100%, 50% 95%, 20% 100%, 0 78%, 0 20%, 25% 0);">
 			<source src="src/img/fondo.mp4" type="video/mp4">
 			<source src="src/img/fondo-celu.mp4" type="video/mp4">
@@ -56,19 +55,17 @@
 	</header>
 	
 	<script>
-		// Asignar el video adecuado dependiendo del tamaño de la pantalla
 		const videoFondo = "src/img/fondo.mp4";
 		const videoFondoCelu = "src/img/fondo-celu.mp4";
 		const backgroundVideo = document.getElementById('backgroundVideo');
 		
-		// Verificar el tamaño de la pantalla y asignar el video correspondiente
 		if (window.innerWidth <= 768) {
 			backgroundVideo.querySelector('source').src = videoFondoCelu;
 		} else {
 			backgroundVideo.querySelector('source').src = videoFondo;
 		}
 		
-		backgroundVideo.load(); // Recargar el video con la nueva fuente
+		backgroundVideo.load(); 
 	</script>
 	
 	
