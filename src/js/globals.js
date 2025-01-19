@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const backgroundAnimation = document.getElementById("background-animation");
-    const totalLights = 15; // Número total de luces
+    const totalLights = 6; // Número total de luces
+
+    // Crear un fragmento de documento para agregar todos los elementos de una vez
+    const fragment = document.createDocumentFragment();
 
     for (let i = 0; i < totalLights; i++) {
         const light = document.createElement("div");
@@ -36,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const duration = Math.random() * 10 + 20; // Entre 20s y 30s
         light.style.animationDuration = `${duration}s`;
 
-        backgroundAnimation.appendChild(light);
+        // Agregar la luz al fragmento de documento
+        fragment.appendChild(light);
     }
+
+    // Agregar todas las luces al DOM de una sola vez
+    backgroundAnimation.appendChild(fragment);
 });
