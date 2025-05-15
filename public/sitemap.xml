@@ -7,18 +7,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Secciones internas -->
-  <url>
-    <loc>https://gestionvehicularmdq.vercel.app/turnos</loc>
-    <lastmod>2024-05-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gestionvehicularmdq.vercel.app/contacto</loc>
-    <lastmod>2024-05-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Servicios individuales -->
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/alta-y-baja-de-motor.html</loc>
