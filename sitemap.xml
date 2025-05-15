@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/</loc>
     <lastmod>2024-05-06</lastmod>
     <priority>1.0</priority>
   </url>
+
+  <!-- Secciones internas -->
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/turnos</loc>
     <lastmod>2024-05-06</lastmod>
@@ -14,5 +17,43 @@
     <loc>https://gestionvehicularmdq.vercel.app/contacto</loc>
     <lastmod>2024-05-06</lastmod>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Servicios individuales -->
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/alta-y-baja-de-motor.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/baja-del-automotor-para-compañías-de-seguros.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/cambio-de-radicación.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/cancelación-de-prenda.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/consulta-de-legajo.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/denuncia-de-venta.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/informe-de-dominio.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/informe-de-infracciones.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/inscripción-inicial.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/resolución-de-Infracciones.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/transferencia-del-automotor.html</loc>
+  </url>
+  <url>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/turnos-de-verificación-policial-y-grabado-de-autopartes.html</loc>
   </url>
 </urlset>
