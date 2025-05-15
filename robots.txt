@@ -1,3 +1,10 @@
+<!-- filepath: c:\GESTION-VEHICULAR-CARINA-CAMALY\robots.txt -->
 User-agent: *
-Allow: /
+Disallow: /src/
+Disallow: /js/
+Disallow: /css/
+Disallow: /img/
+Allow: /src/pages/
+Allow: /servicios/
+
 Sitemap: https://gestionvehicularmdq.vercel.app/sitemap.xml

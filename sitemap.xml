@@ -3,45 +3,69 @@
   <!-- Página principal -->
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/</loc>
-    <lastmod>2024-05-06</lastmod>
+    <lastmod>2025-05-15</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Servicios individuales -->
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/alta-y-baja-de-motor.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gestionvehicularmdq.vercel.app/servicios/baja-del-automotor-para-compañías-de-seguros.html</loc>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/baja-del-automotor-para-companias-de-seguros.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gestionvehicularmdq.vercel.app/servicios/cambio-de-radicación.html</loc>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/cambio-de-radicacion.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gestionvehicularmdq.vercel.app/servicios/cancelación-de-prenda.html</loc>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/cancelacion-de-prenda.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/consulta-de-legajo.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/denuncia-de-venta.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/informe-de-dominio.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/informe-de-infracciones.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gestionvehicularmdq.vercel.app/servicios/inscripción-inicial.html</loc>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/inscripcion-inicial.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gestionvehicularmdq.vercel.app/servicios/resolución-de-Infracciones.html</loc>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/resolucion-de-infracciones.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gestionvehicularmdq.vercel.app/servicios/transferencia-del-automotor.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gestionvehicularmdq.vercel.app/servicios/turnos-de-verificación-policial-y-grabado-de-autopartes.html</loc>
+    <loc>https://gestionvehicularmdq.vercel.app/servicios/turnos-de-verificacion-policial-y-grabado-de-autopartes.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
