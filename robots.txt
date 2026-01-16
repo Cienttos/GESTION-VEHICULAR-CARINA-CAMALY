@@ -1,7 +1,8 @@
 User-agent: *
-Disallow: /js/
-Disallow: /css/
-Disallow: /img/
+Allow: /
+Allow: /src/img/
+Allow: /src/styles/
+Allow: /src/js/
 Allow: /src/pages/
 
 Sitemap: https://gestionvehicularmdq.vercel.app/sitemap.xml

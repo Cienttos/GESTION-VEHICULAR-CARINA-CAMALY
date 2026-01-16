@@ -1,0 +1,107 @@
+{
+  "rewrites": [
+    {
+      "source": "/servicios/alta-y-baja-de-motor",
+      "destination": "/src/pages/alta-y-baja-de-motor.html"
+    },
+    {
+      "source": "/servicios/baja-del-automotor-para-companias-de-seguros",
+      "destination": "/src/pages/baja-del-automotor-para-companias-de-seguros.html"
+    },
+    {
+      "source": "/servicios/cambio-de-radicacion",
+      "destination": "/src/pages/cambio-de-radicacion.html"
+    },
+    {
+      "source": "/servicios/cancelacion-de-prenda",
+      "destination": "/src/pages/cancelacion-de-prenda.html"
+    },
+    {
+      "source": "/servicios/consulta-de-legajo",
+      "destination": "/src/pages/consulta-de-legajo.html"
+    },
+    {
+      "source": "/servicios/denuncia-de-venta",
+      "destination": "/src/pages/denuncia-de-venta.html"
+    },
+    {
+      "source": "/servicios/informe-de-dominio",
+      "destination": "/src/pages/informe-de-dominio.html"
+    },
+    {
+      "source": "/servicios/informe-de-infracciones",
+      "destination": "/src/pages/informe-de-infracciones.html"
+    },
+    {
+      "source": "/servicios/inscripcion-inicial",
+      "destination": "/src/pages/inscripcion-inicial.html"
+    },
+    {
+      "source": "/servicios/resolucion-de-infracciones",
+      "destination": "/src/pages/resolucion-de-infracciones.html"
+    },
+    {
+      "source": "/servicios/transferencia-del-automotor",
+      "destination": "/src/pages/transferencia-del-automotor.html"
+    },
+    {
+      "source": "/servicios/turnos-de-verificacion-policial-y-grabado-de-autopartes",
+      "destination": "/src/pages/turnos-de-verificacion-policial-y-grabado-de-autopartes.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/src/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/src/styles/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/src/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

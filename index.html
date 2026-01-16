@@ -33,7 +33,8 @@
     <meta name="publisher" content="Gestion Vehicular Carina Camaly" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="src/js/globals.js"></script>
+    <script src="src/js/globals.js" defer></script>
+    <script src="src/js/lazy-load.js" defer></script>
     <link rel="stylesheet" href="src/styles/globals.css" />
     <link
       rel="stylesheet"
@@ -64,6 +65,7 @@
         autoplay
         loop
         muted
+        playsinline
         class="absolute inset-0 w-full h-full object-cover"
         style="
           clip-path: polygon(
@@ -310,10 +312,7 @@
           <div class="swiper-wrapper">
             <!-- Tarjetas de servicios para el primer carrusel -->
             <div class="swiper-slide">
-              <a
-                href="src/pages/transferencia-del-automotor.html"
-                class="block"
-              >
+              <a href="/servicios/transferencia-del-automotor" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(2deg)"
@@ -328,7 +327,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/informe-de-dominio.html" class="block">
+              <a href="/servicios/informe-de-dominio" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(-2deg)"
@@ -343,7 +342,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/informe-de-infracciones.html" class="block">
+              <a href="/servicios/informe-de-infracciones" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(3deg)"
@@ -358,7 +357,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/consulta-de-legajo.html" class="block">
+              <a href="/servicios/consulta-de-legajo" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(-1deg)"
@@ -373,7 +372,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/cancelacion-de-prenda.html" class="block">
+              <a href="/servicios/cancelacion-de-prenda" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(2deg)"
@@ -388,7 +387,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/denuncia-de-venta.html" class="block">
+              <a href="/servicios/denuncia-de-venta" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(-2deg)"
@@ -414,7 +413,7 @@
           <div class="swiper-wrapper">
             <!-- Tarjetas de servicios para el segundo carrusel -->
             <div class="swiper-slide">
-              <a href="src/pages/inscripcion-inicial.html" class="block">
+              <a href="/servicios/inscripcion-inicial" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(-3deg)"
@@ -429,7 +428,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/alta-y-baja-de-motor.html" class="block">
+              <a href="/servicios/alta-y-baja-de-motor" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(2deg)"
@@ -445,7 +444,7 @@
             </div>
             <div class="swiper-slide">
               <a
-                href="src/pages/baja-del-automotor-para-companias-de-seguros.html"
+                href="/servicios/baja-del-automotor-para-companias-de-seguros"
                 class="block"
               >
                 <div
@@ -462,7 +461,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/cambio-de-radicacion.html" class="block">
+              <a href="/servicios/cambio-de-radicacion" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(3deg)"
@@ -477,7 +476,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="src/pages/resolucion-de-infracciones.html" class="block">
+              <a href="/servicios/resolucion-de-infracciones" class="block">
                 <div
                   class="bg-white p-6 rounded-lg shadow-lg transform hover:shadow-xl transition-all duration-300 h-40 flex flex-col justify-center items-center"
                   style="transform: rotate(-2deg)"
@@ -493,7 +492,7 @@
             </div>
             <div class="swiper-slide">
               <a
-                href="src/pages/turnos-de-verificacion-policial-y-grabado-de-autopartes.html"
+                href="/servicios/turnos-de-verificacion-policial-y-grabado-de-autopartes"
                 class="block"
               >
                 <div
