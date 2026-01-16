@@ -32,24 +32,52 @@
       href="https://gestionvehicularmdq.vercel.app/servicios/consulta-de-legajo"
     />
     <link rel="stylesheet" href="../styles/globals.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../styles/globals.css" />
     <link rel="icon" href="../img/c.svg" type="image/svg+xml" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style id="critical-subpage-styles">
+      :root {
+        --brand-color: #2e6a79;
+        --accent-color: #4faed4;
+      }
+      body {
+        background-color: #f9fafb;
+        margin: 0;
+        padding: 0;
+      }
+      .subpage-header {
+        padding: 4rem 1.5rem;
+        text-align: center;
+        background: linear-gradient(to right, #2e6a79, #4faed4);
+        color: white;
+      }
+      .home-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        background-color: var(--brand-color);
+        color: white;
+        padding: 1rem;
+        border-radius: 9999px;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .home-btn:hover {
+        background-color: var(--accent-color);
+        transform: scale(1.1);
+      }
+    </style>
     <script src="../js/globals.js" defer></script>
+    <script src="../js/lazy-load.js" defer></script>
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Botón de inicio fijo -->
     <a
       href="/"
-      class="fixed top-4 left-4 bg-[#2e6a79] text-white p-4 rounded-full shadow-md hover:bg-[#4faed4] hover:scale-110 transition-all duration-300 z-50"
+      class="fixed top-4 left-4 bg-[#2e6a79] text-white p-4 rounded-full shadow-md hover:bg-[#4faed4] hover:scale-110 transition-all duration-300 z-50 home-btn"
     >
       <span class="material-icons text-xl">home</span>
     </a>
@@ -59,7 +87,7 @@
 
     <!-- Encabezado -->
     <header
-      class="py-16 px-6 text-center bg-gradient-to-r from-[#2e6a79] to-[#4faed4] text-white"
+      class="py-16 px-6 text-center bg-gradient-to-r from-[#2e6a79] to-[#4faed4] text-white subpage-header"
     >
       <h1
         class="text-5xl font-bold hover:scale-105 transition-transform duration-300"
@@ -197,5 +225,6 @@
         once: false,
       });
     </script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
   </body>
 </html>
