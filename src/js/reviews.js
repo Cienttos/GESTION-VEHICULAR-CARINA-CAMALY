@@ -39,7 +39,7 @@
   }
 
   function getMapsReviewsUrl() {
-    return 'https://www.google.com/maps/search/CC+Gestoria+del+automotor+Mar+del+Plata+rese%C3%B1as/';
+    return 'https://www.google.com/maps/place//data=!4m4!3m3!1s0x680c3996c072cf2d:0x3b26dfa6fa60710d!9m1!1b1';
   }
 
   function renderReviews(data) {
@@ -63,7 +63,7 @@
 
     if (seeMoreBtn) {
       seeMoreBtn.classList.remove('hidden');
-      seeMoreBtn.querySelector('.btn-text').textContent = 'Ver más';
+      seeMoreBtn.querySelector('.btn-text').textContent = 'Ver más reseñas';
       seeMoreBtn.onclick = function () {
         window.open(getMapsReviewsUrl(), '_blank');
       };

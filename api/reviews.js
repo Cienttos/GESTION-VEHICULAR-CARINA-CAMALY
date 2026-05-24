@@ -3,7 +3,7 @@ const path = require('path');
 
 const PLACE_NAME = 'CC - Gestoria del automotor Mar del Plata';
 const PLACE_ID = process.env.GOOGLE_PLACE_ID || 'ChIJK9xR3M7ivJUR1HCGFjOJt8k';
-const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/CC+Gestoria+del+automotor+Mar+del+Plata+rese%C3%B1as/`;
+const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place//data=!4m4!3m3!1s0x680c3996c072cf2d:0x3b26dfa6fa60710d!9m1!1b1';
 
 function generateAvatar(name) {
   const parts = name.trim().split(/\s+/);
