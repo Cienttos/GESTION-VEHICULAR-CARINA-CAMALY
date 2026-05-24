@@ -1,5 +1,6 @@
 const PLACE_NAME = 'CC - Gestoria del automotor Mar del Plata';
 const PLACE_ID = process.env.GOOGLE_PLACE_ID || 'ChIJK9xR3M7ivJUR1HCGFjOJt8k';
+const GOOGLE_MAPS_URL = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
 
 const MOCK_REVIEWS = [
   { author_name: "Yamina Rubilar", rating: 5, text: "Excelente atención! Carina me ayudó con la transferencia de mi auto y fue todo muy rápido y sin complicaciones. Es muy profesional y dedicada, me asesoró en todo el proceso de compra de mi 0km. La gestoría más confiable de Mar del Plata. Sin dudas la recomiendo totalmente, hace años que confío en ella para todos mis trámites. Es eficiente, honesta y siempre va un paso más allá. La recomiendo una y otra vez!", relative_time_description: "Hace 4 meses" },
@@ -36,7 +37,7 @@ module.exports = async function handler(req, res) {
 
   const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
-  if (GOOGLE_API_KEY) {
+  if (GOOGLE_API_KEY && GOOGLE_API_KEY !== 'TU_API_KEY_AQUI') {
     try {
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews,user_ratings_total&language=es&key=${GOOGLE_API_KEY}`
@@ -55,6 +56,7 @@ module.exports = async function handler(req, res) {
           total_ratings: data.result.user_ratings_total,
           reviews,
           source: 'google',
+          google_maps_url: GOOGLE_MAPS_URL,
         });
       }
     } catch (_) {}
@@ -73,5 +75,6 @@ module.exports = async function handler(req, res) {
     total_ratings: 37,
     reviews: mockWithAvatars,
     source: 'demo',
+    google_maps_url: GOOGLE_MAPS_URL,
   });
 };
