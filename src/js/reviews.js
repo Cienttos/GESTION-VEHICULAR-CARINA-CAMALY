@@ -71,20 +71,14 @@
     }
 
     const seeMoreBtn = document.getElementById('see-more-btn');
-    const hiddenCount = sorted.length - INITIAL_COUNT;
 
     if (seeMoreBtn) {
-      if (hiddenCount > 0) {
-        seeMoreBtn.classList.remove('hidden');
-        seeMoreBtn.querySelector('.btn-text').textContent = `Ver más (${hiddenCount})`;
-        seeMoreBtn.onclick = function () {
-          const hiddenCards = container.querySelectorAll('.hidden-review');
-          hiddenCards.forEach(card => card.classList.remove('hidden-review'));
-          seeMoreBtn.classList.add('hidden');
-        };
-      } else {
-        seeMoreBtn.classList.add('hidden');
-      }
+      seeMoreBtn.classList.remove('hidden');
+      seeMoreBtn.querySelector('.btn-text').textContent = 'Ver más';
+      seeMoreBtn.onclick = function () {
+        const mapsUrl = data.google_maps_url || 'https://www.google.com/maps/place/?q=place_id:ChIJK9xR3M7ivJUR1HCGFjOJt8k';
+        window.open(mapsUrl, '_blank');
+      };
     }
   }
 
