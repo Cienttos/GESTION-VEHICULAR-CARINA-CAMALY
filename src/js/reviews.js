@@ -38,6 +38,10 @@
     return card;
   }
 
+  function getMapsReviewsUrl() {
+    return 'https://www.google.com/maps/search/CC+Gestoria+del+automotor+Mar+del+Plata+rese%C3%B1as/';
+  }
+
   function renderReviews(data) {
     const container = document.getElementById('reviews-container');
     const infoBar = document.getElementById('reviews-info');
@@ -52,22 +56,7 @@
     });
 
     if (infoBar) {
-      const mapsLink = data.google_maps_url || 'https://www.google.com/maps/place/?q=place_id:ChIJK9xR3M7ivJUR1HCGFjOJt8k';
-      infoBar.innerHTML = `
-        <div class="flex flex-col items-center gap-4">
-          <p class="text-gray-600 inline-block bg-white px-6 py-3 rounded-full shadow-md">
-            <i class="fab fa-google text-[#4faed4] mr-2"></i>
-            Calificación promedio:
-            <span class="text-yellow-400 font-bold">${renderStars(data.rating || 5)}</span>
-            <span class="font-semibold text-[#2e6a79]">${(data.rating || 5).toFixed(1)}</span>
-            <span class="text-gray-400 text-sm">(${data.total_ratings || 0} reseñas)</span>
-          </p>
-          <a href="${mapsLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-[#4faed4] hover:text-[#2e6a79] transition-colors">
-            <i class="fas fa-external-link-alt"></i>
-            Ver todas las reseñas en Google Maps
-          </a>
-        </div>
-      `;
+      infoBar.innerHTML = '';
     }
 
     const seeMoreBtn = document.getElementById('see-more-btn');
@@ -76,8 +65,7 @@
       seeMoreBtn.classList.remove('hidden');
       seeMoreBtn.querySelector('.btn-text').textContent = 'Ver más';
       seeMoreBtn.onclick = function () {
-        const mapsUrl = data.google_maps_url || 'https://www.google.com/maps/place/?q=place_id:ChIJK9xR3M7ivJUR1HCGFjOJt8k';
-        window.open(mapsUrl, '_blank');
+        window.open(getMapsReviewsUrl(), '_blank');
       };
     }
   }
