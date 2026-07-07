@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Gestoría del Automotor - Mar del Plata", description = "Gestoría del Automotor en Mar del Plata. Especialistas en transferencias, trámites vehiculares y gestión automotor." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="gestoría del automotor mar del plata, gestión vehicular Mar del Plata, transferencias vehiculares, trámites automotores" />
+  <meta name="author" content="Cienttos" />
+  <meta property="og:title" content="Gestoría del Automotor en Mar del Plata - Trámites Profesionales" />
+  <meta property="og:description" content="Confía en la mejor gestoría del automotor en Mar del Plata para trámites rápidos, seguros y eficientes." />
+  <meta property="og:image" content="/c.svg" />
+  <meta property="og:url" content="https://gestionvehicularmdq.vercel.app" />
+  <link rel="canonical" href="https://gestionvehicularmdq.vercel.app" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@700&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/gl-nummernschild-eng" rel="stylesheet" />
+</head>
+<body>
+  <slot />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" is:inline></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" is:inline></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" is:inline></script>
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js" is:inline></script>
+  <script src="/src/scripts/main.js" is:inline></script>
+</body>
+</html>
