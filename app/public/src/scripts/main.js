@@ -535,19 +535,6 @@ function loadReviews() {
       { opacity: 1, scale: 1, y: 0, duration: 0.6, delay: i * 0.06, ease: 'back.out(1.8)', scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play reverse play reverse' } }
     );
   });
-  setTimeout(function(){
-    setupCarousel('reviews-container', 'right');
-    var wrap = document.getElementById('reviews-truck-wrap');
-    var grid = document.getElementById('reviews-container');
-    if (wrap && grid) {
-      var scrollTimer;
-      grid.addEventListener('scroll', function(){
-        wrap.classList.add('scrolling');
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function(){ wrap.classList.remove('scrolling'); }, 300);
-      });
-    }
-  }, 800);
 }
 
 
