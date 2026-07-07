@@ -1751,110 +1751,115 @@ nav a:hover::after {
   min-width: 0;
 }
 
-/* TARJETA: blanca sólida, esquinas RECTAS */
+/* TARJETA: outlined suave, sin redondeo */
 .svc-card {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
   background: #ffffff;
+  border: 1.5px solid rgba(46, 106, 121, 0.45);
   border-radius: 0;
   color: #1a2a30;
   text-decoration: none;
-  transition: background 0.18s, transform 0.18s;
+  transition: background 0.18s, transform 0.18s, border-color 0.18s, box-shadow 0.18s;
   cursor: pointer;
   min-height: 72px;
   overflow: hidden;
 }
 
 .svc-card:hover {
-  background: #e8f4f8;
-  transform: translateY(-2px);
+  background: #f4fafc;
+  border-color: #2e6a79;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(11, 46, 54, 0.15);
 }
 
-/* Título a la izquierda */
+/* Texto centrado */
 .svc-card-left {
-  flex: 1;
   display: flex;
   align-items: center;
-  padding: 0.55rem 0.5rem 0.55rem 0.6rem;
+  justify-content: flex-start;
+  padding: 0;
   min-width: 0;
 }
 
 .svc-card h3 {
-  font-size: clamp(0.55rem, 0.82vw, 0.72rem);
+  font-size: clamp(0.72rem, 0.98vw, 0.94rem);
   font-weight: 700;
   line-height: 1.25;
-  color: #1a2a30;
+  color: #10242a;
   margin: 0;
   text-align: left;
   letter-spacing: 0.01em;
   word-break: break-word;
 }
 
-/* Separador vertical central */
+/* Separador oculto */
 .svc-card-sep {
-  width: 1.5px;
-  background: rgba(46, 106, 121, 0.22);
-  align-self: stretch;
-  flex-shrink: 0;
+  display: none;
 }
 
-/* Icono a la derecha */
+/* Icono a la izquierda del texto */
 .svc-card-right {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.55rem;
+  padding: 0;
   flex-shrink: 0;
-  width: 2.4rem;
+  width: auto;
+  order: -1;
 }
 
 .svc-card-right svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.3rem;
+  height: 1.3rem;
   fill: #2e6a79;
   flex-shrink: 0;
 }
 
-/* RUEDAS: FUERA de la tarjeta, debajo */
+/* RUEDAS con chasis */
 .svc-card-wheels {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 3px 8px 0;
-  flex-shrink: 0;
-}
-
-.svc-card-wheel {
-  display: block;
-  width: clamp(14px, 1.8vw, 22px);
-  height: clamp(14px, 1.8vw, 22px);
-  border-radius: 50%;
-  border: 2.5px solid rgba(255, 255, 255, 0.88);
-  background: transparent;
+  align-items: center;
+  padding: 4px 11px 0;
   flex-shrink: 0;
   position: relative;
 }
 
-.svc-card-wheel::before {
+.svc-card-wheels::before {
   content: '';
   position: absolute;
-  inset: 3px;
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.svc-card-wheel {
+  display: block;
+  position: relative;
+  width: clamp(22px, 2.4vw, 32px);
+  height: clamp(22px, 2.4vw, 32px);
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+  border: 6px solid #ffffff;
+  flex-shrink: 0;
+  z-index: 2;
 }
 
 .svc-card-wheel::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 3px;
-  height: 3px;
+  inset: 2px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.75);
+  background: #0b2e36;
 }
 
 /* Mobile */
@@ -1876,15 +1881,15 @@ nav a:hover::after {
     order: 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.45rem;
+    gap: 0.5rem;
     width: 100%;
   }
 
   .svc-card-wrap { flex: none; }
 
-  .svc-card { min-height: 56px; }
+  .svc-card { min-height: 64px; }
 
-  .svc-card-left { padding: 0.45rem 0.35rem 0.45rem 0.45rem; }
+  .svc-card-left { padding: 0.55rem 0.35rem 0.5rem 0.45rem; }
 
   .svc-card-right { width: 2rem; padding: 0.4rem; }
 
@@ -1908,9 +1913,9 @@ nav a:hover::after {
 
   .svc-truck-wrap { width: clamp(130px, 14vw, 210px); }
 
-  .svc-cards-grid { gap: 0.6rem; }
+  .svc-cards-grid { gap: 0.4rem; }
 
-  .svc-card { min-height: 72px; }
+  .svc-card { min-height: 80px; }
 }
 
 /* Monitor grande */
@@ -1921,15 +1926,15 @@ nav a:hover::after {
 
   .svc-truck-wrap { width: clamp(175px, 14vw, 250px); }
 
-  .svc-cards-grid { gap: 0.7rem; }
+  .svc-cards-grid { gap: 0.4rem; }
 
-  .svc-card { min-height: 82px; }
+  .svc-card { min-height: 88px; }
 
   .svc-card-right { width: 2.7rem; }
 
   .svc-card-right svg { width: 1.25rem; height: 1.25rem; }
 
-  .svc-card-wheel { width: 24px; height: 24px; }
+  .svc-card-wheel { width: 32px; height: 32px; }
 }
 /* ===== REVIEWS: TABLÓN DE ANUNCIOS =====*/
 
