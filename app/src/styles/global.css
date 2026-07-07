@@ -1722,6 +1722,7 @@ nav a:hover::after {
   order: 2;
   align-self: flex-end;
   padding-bottom: 26px;
+  margin-top: 1.5rem;
 }
 
 .svc-truck-img {
@@ -1729,6 +1730,7 @@ nav a:hover::after {
   height: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  transform: scaleX(-1) scale(1.6);
   display: block;
 }
 
@@ -1845,8 +1847,8 @@ nav a:hover::after {
 .svc-card-wheel {
   display: block;
   position: relative;
-  width: clamp(22px, 2.4vw, 32px);
-  height: clamp(22px, 2.4vw, 32px);
+  width: clamp(24px, 2.6vw, 34px);
+  height: clamp(24px, 2.6vw, 34px);
   border-radius: 50%;
   background: #ffffff;
   border: 6px solid #ffffff;
@@ -1934,7 +1936,7 @@ nav a:hover::after {
 
   .svc-card-right svg { width: 1.25rem; height: 1.25rem; }
 
-  .svc-card-wheel { width: 32px; height: 32px; }
+  .svc-card-wheel { width: 34px; height: 34px; }
 }
 /* ===== REVIEWS: TABLÓN DE ANUNCIOS =====*/
 
