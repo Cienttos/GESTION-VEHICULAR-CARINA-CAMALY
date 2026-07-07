@@ -142,55 +142,54 @@ function animateElements() {
 
   /* ===== SERVICES SCROLL ANIMATION ===== */
   (function() {
-    var row1 = Array.from(document.querySelectorAll('.brick-card[data-svc-row="1"]'));
-    var row2 = Array.from(document.querySelectorAll('.brick-card[data-svc-row="2"]'));
-    if (!row1.length && !row2.length) return;
+    var svcRow1 = document.querySelector('.svc-row-1');
+    var svcRow2 = document.querySelector('.svc-row-2');
+    if (!svcRow1) return;
 
     var mm = gsap.matchMedia();
 
-    /* Desktop + Tablet: animaci├│n con scrub (reversible al subir) */
+    /* Desktop + Tablet: animación con scrub (reversible al subir) */
     mm.add('(min-width: 600px)', function() {
-      /* Esconder inicialmente */
-      gsap.set(row1, { opacity: 1, x: '-120vw' });
-      gsap.set(row2, { opacity: 1, x: '120vw' });
+      gsap.set(svcRow1, { x: '-120vw' });
+      gsap.set(svcRow2, { x: '120vw' });
 
-      /* Fila 1: entra de izquierda ÔåÆ derecha */
-      gsap.to(row1, {
-        x: 0,
+      gsap.to(svcRow1, {
+        x: '8vw',
         duration: 1,
-        stagger: 0,
         ease: 'none',
         scrollTrigger: {
           trigger: '.services-section',
-          start: 'top 95%',
-          end: 'top 38%',
-          scrub: 1,
+          start: 'top 110%',
+          end: 'bottom 60%',
+          scrub: 2,
           toggleActions: 'play reverse play reverse'
         }
       });
 
-      /* Fila 2: entra de derecha ÔåÆ izquierda */
-      gsap.to(row2, {
-        x: 0,
+      gsap.to(svcRow2, {
+        x: '-8vw',
         duration: 1,
-        stagger: 0,
         ease: 'none',
         scrollTrigger: {
           trigger: '.services-section',
-          start: 'top 90%',
-          end: 'top 32%',
-          scrub: 1,
+          start: 'top 110%',
+          end: 'bottom 60%',
+          scrub: 2,
           toggleActions: 'play reverse play reverse'
         }
       });
     });
 
-    /* Mobile: animaci├│n simple sin scrub */
+    /* Mobile: animación simple sin scrub */
     mm.add('(max-width: 599px)', function() {
-      var allCards = row1.concat(row2);
-      gsap.set(allCards, { opacity: 0, y: 25 });
-      gsap.to(allCards, {
-        opacity: 1, y: 0, duration: 0.5, stagger: 0.04, ease: 'power2.out',
+      gsap.set(svcRow1, { x: '-100vw' });
+      gsap.set(svcRow2, { x: '100vw' });
+      gsap.to(svcRow1, {
+        x: 0, duration: 0.8, ease: 'power2.out',
+        scrollTrigger: { trigger: '.services-section', start: 'top 88%', toggleActions: 'play none none none' }
+      });
+      gsap.to(svcRow2, {
+        x: 0, duration: 0.8, ease: 'power2.out',
         scrollTrigger: { trigger: '.services-section', start: 'top 88%', toggleActions: 'play none none none' }
       });
     });
@@ -498,22 +497,22 @@ function setupCarousel(id, dir) {
 }
 
 var reviewsData = [
-  {"author_name":"Joel Pascuan","rating":5,"text":"Carina me solucion├│ todos los inconvenientes y me hizo ahorrar mucho tiempo. Necesitaba tramitar un patentamiento pero por mi cuenta se iba a complicar demasiado. Fue muy amable y atenta desde el minuto 1.","avatar":{"initials":"JP","bgColor":"#2e6a79"}},
-  {"author_name":"Natalia Gandara","rating":5,"text":"┬íExcelente servicio! Carina gestion├│ todo de manera impecable, con much├¡sima rapidez y sin ning├║n tipo de inconveniente. El asesoramiento fue sumamente claro y profesional desde el primer momento. Una experiencia impecable y s├║per recomendable.","avatar":{"initials":"NG","bgColor":"#3d8a9e"}},
-  {"author_name":"Carina Cipolletti","rating":5,"text":"Una excelente profesional. Me acompa├▒├│ en todo el proceso con responsabilidad, compromiso y mucha claridad. Siempre atenta a cada detalle y resolviendo todo con rapidez y buena predisposici├│n. Da mucha tranquilidad saber que est├í al tanto de todo y que pod├®s confiar plenamente en su trabajo. ┬íSin dudas la volver├¡a a elegir!","avatar":{"initials":"CC","bgColor":"#1a4a56"}},
-  {"author_name":"Mateo Cientofante","rating":5,"text":"Servicio impecable y s├║per recomendable. Tuve una excelente experiencia con esta gestor├¡a. Me ayudaron en todo momento, explic├índome cada paso con claridad y resolviendo los tr├ímites de forma r├ípida y profesional.","avatar":{"initials":"MC","bgColor":"#1a4a56"}},
-  {"author_name":"Fabi├ín Mazza","rating":5,"text":"Excelente servicio y de confianza. Me ayud├│ con la baja de un auto que me robaron, sali├│ todo bien y r├ípido. Me asisti├│ con todo lo que me ped├¡a el seguro. 100% recomendable.","avatar":{"initials":"FM","bgColor":"#2e6a79"}},
-  {"author_name":"Mariana S├íez","rating":5,"text":"No conozco personalmente a Carina y la contact├® virtualmente. Le hice una consulta concreta y me respondi├│ no solo extremadamente profesional, amable y concreta, sino que no dudo un instante en ayudarme. 10/10.","avatar":{"initials":"MS","bgColor":"#4faed4"}},
-  {"author_name":"Stella Di Paola","rating":5,"text":"Muy conforme con la gesti├│n de la venta del auto. Carina fue muy eficiente, clara y profesional en todo el proceso. Gracias!!!","avatar":{"initials":"SD","bgColor":"#4faed4"}},
-  {"author_name":"Rosana Behotaz","rating":5,"text":"Excelente la atenci├│n, muy profesional. Es para recomendar. Nos agiliz├│ el patentado de un veh├¡culo. Muchas gracias Carina.","avatar":{"initials":"RB","bgColor":"#2e6a79"}},
-  {"author_name":"Claudia Borneo","rating":5,"text":"Super recomendable! Siempre dispuesta a responder mis consultas y el tr├ímite sali├│ muy r├ípido.","avatar":{"initials":"CB","bgColor":"#2a5f6e"}},
-  {"author_name":"Fernando Cientofante","rating":5,"text":"Rapidez y eficacia en los tr├ímites. Particularmente en baja de siniestro por destrucci├│n total.","avatar":{"initials":"FC","bgColor":"#2e6a79"}}
+  {"author_name":"Joel Pascuan","rating":5,"text":"Carina me solucionó todos los inconvenientes y me hizo ahorrar mucho tiempo. Necesitaba tramitar un patentamiento pero por mi cuenta se iba a complicar demasiado. Fue muy amable y atenta desde el minuto 1.","avatar":{"initials":"JP","bgColor":"#2e6a79"}},
+  {"author_name":"Natalia Gandara","rating":5,"text":"¡Excelente servicio! Carina gestionó todo de manera impecable, con muchísima rapidez y sin ningún tipo de inconveniente. El asesoramiento fue sumamente claro y profesional desde el primer momento. Una experiencia impecable y súper recomendable.","avatar":{"initials":"NG","bgColor":"#3d8a9e"}},
+  {"author_name":"Carina Cipolletti","rating":5,"text":"Una excelente profesional. Me acompañó en todo el proceso con responsabilidad, compromiso y mucha claridad. Siempre atenta a cada detalle y resolviendo todo con rapidez y buena predisposición. Da mucha tranquilidad saber que está al tanto de todo y que podés confiar plenamente en su trabajo. ¡Sin dudas la volvería a elegir!","avatar":{"initials":"CC","bgColor":"#1a4a56"}},
+  {"author_name":"Mateo Cientofante","rating":5,"text":"Servicio impecable y súper recomendable. Tuve una excelente experiencia con esta gestoría. Me ayudaron en todo momento, explicándome cada paso con claridad y resolviendo los trámites de forma rápida y profesional.","avatar":{"initials":"MC","bgColor":"#1a4a56"}},
+  {"author_name":"Fabián Mazza","rating":5,"text":"Excelente servicio y de confianza. Me ayudó con la baja de un auto que me robaron, salió todo bien y rápido. Me asistió con todo lo que me pedía el seguro. 100% recomendable.","avatar":{"initials":"FM","bgColor":"#2e6a79"}},
+  {"author_name":"Mariana Sáez","rating":5,"text":"No conozco personalmente a Carina y la contacté virtualmente. Le hice una consulta concreta y me respondió no solo extremadamente profesional, amable y concreta, sino que no dudo un instante en ayudarme. 10/10.","avatar":{"initials":"MS","bgColor":"#4faed4"}},
+  {"author_name":"Stella Di Paola","rating":5,"text":"Muy conforme con la gestión de la venta del auto. Carina fue muy eficiente, clara y profesional en todo el proceso. Gracias!!!","avatar":{"initials":"SD","bgColor":"#4faed4"}},
+  {"author_name":"Rosana Behotaz","rating":5,"text":"Excelente la atención, muy profesional. Es para recomendar. Nos agilizó el patentado de un vehículo. Muchas gracias Carina.","avatar":{"initials":"RB","bgColor":"#2e6a79"}},
+  {"author_name":"Claudia Borneo","rating":5,"text":"Super recomendable! Siempre dispuesta a responder mis consultas y el trámite salió muy rápido.","avatar":{"initials":"CB","bgColor":"#2a5f6e"}},
+  {"author_name":"Fernando Cientofante","rating":5,"text":"Rapidez y eficacia en los trámites. Particularmente en baja de siniestro por destrucción total.","avatar":{"initials":"FC","bgColor":"#2e6a79"}}
 ];
 
 
 function renderStars(rating) {
   var s = '';
-  for (var i = 0; i < 5; i++) s += i < rating ? 'Ôÿà' : 'Ôÿå';
+  for (var i = 0; i < 5; i++) s += i < rating ? '\u2605' : '\u2606';
   return s;
 }
 
@@ -590,7 +589,7 @@ document.addEventListener('mousemove', function(e){
   document.querySelectorAll('.ft-pinned-wrapper .deco-item').forEach(function(el){
     var i = parseFloat(el.dataset.intensity || 0.5);
     var rot = el.dataset.rot || '0deg';
-    el.style.transform = 'translate(' + (mouseX * i * 12).toFixed(1) + 'px, ' + (mouseY * i * 12).toFixed(1) + 'px) rotate(' + rot + ')';
+    el.style.transform = 'translate(' + (mouseX * i * 20).toFixed(1) + 'px, ' + (mouseY * i * 20).toFixed(1) + 'px) rotate(' + rot + ')';
   });
 });
 

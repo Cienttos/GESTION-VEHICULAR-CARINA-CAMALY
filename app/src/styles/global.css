@@ -303,10 +303,46 @@ nav a:hover::after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: var(--brand-gradient);
-  z-index: 999;
-  pointer-events: none
+  height: 400px;
+  background: linear-gradient(to top,
+    transparent 0%,
+    rgba(11,46,54,0.05) 10%,
+    rgba(11,46,54,0.12) 20%,
+    rgba(11,46,54,0.22) 30%,
+    rgba(11,46,54,0.35) 40%,
+    rgba(11,46,54,0.5) 50%,
+    rgba(11,46,54,0.65) 60%,
+    rgba(11,46,54,0.78) 70%,
+    rgba(11,46,54,0.88) 80%,
+    rgba(11,46,54,0.95) 90%,
+    #0b2e36 100%
+  );
+  pointer-events: none;
+  z-index: 999
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(11,46,54,0.05) 10%,
+    rgba(11,46,54,0.12) 20%,
+    rgba(11,46,54,0.22) 30%,
+    rgba(11,46,54,0.35) 40%,
+    rgba(11,46,54,0.5) 50%,
+    rgba(11,46,54,0.65) 60%,
+    rgba(11,46,54,0.78) 70%,
+    rgba(11,46,54,0.88) 80%,
+    rgba(11,46,54,0.95) 90%,
+    #0b2e36 100%
+  );
+  pointer-events: none;
+  z-index: 1
 }
 
 #hero-canvas {
@@ -762,6 +798,10 @@ nav a:hover::after {
   background: #0b2e36;
   position: relative;
   display: block
+}
+
+.ft-section::before {
+  display: none
 }
 
 .ft-pinned-wrapper {
@@ -1223,9 +1263,9 @@ nav a:hover::after {
 
 /* ===== ABOUT ===== */
 .about-section {
-  background-color: #f7f4ef;
-  background-image: linear-gradient(45deg, rgba(46, 106, 121, 0.06) 25%, transparent 25%, transparent 75%, rgba(46, 106, 121, 0.06) 75%), linear-gradient(-45deg, rgba(46, 106, 121, 0.06) 25%, transparent 25%, transparent 75%, rgba(46, 106, 121, 0.06) 75%);
-  background-size: 80px 80px, 80px 80px;
+  background-color: #f0ece5;
+  background-image: linear-gradient(45deg, rgba(46,106,121,0.05) 25%, transparent 25%, transparent 75%, rgba(46,106,121,0.05) 75%), linear-gradient(-45deg, rgba(46,106,121,0.05) 25%, transparent 25%, transparent 75%, rgba(46,106,121,0.05) 75%);
+  background-size: 80px 80px;
   padding: 4rem 1rem;
   position: relative;
   z-index: 0
@@ -1712,6 +1752,10 @@ nav a:hover::after {
   padding: 0 1.5rem;
 }
 
+.svc-row + .svc-row {
+  margin-top: 1.5rem;
+}
+
 /* Camión - a la DERECHA, sin voltear */
 .svc-truck-wrap {
   display: flex;
@@ -1742,6 +1786,23 @@ nav a:hover::after {
   flex: 1;
   align-items: flex-end;
   order: 1;
+}
+
+/* ===== ROW 2: INVERTIDA (camión a la izquierda) ===== */
+.svc-row-2 {
+  flex-direction: row;
+}
+
+.svc-row-2 .svc-cards-grid {
+  order: 2;
+}
+
+.svc-truck-left {
+  order: 1 !important;
+}
+
+.svc-truck-img-left {
+  transform: scaleX(1) scale(1.6);
 }
 
 /* Wrapper individual: tarjeta encima, ruedas abajo */
@@ -1886,6 +1947,8 @@ nav a:hover::after {
     gap: 0.5rem;
     width: 100%;
   }
+
+  .svc-row-2 .svc-cards-grid { order: 2; }
 
   .svc-card-wrap { flex: none; }
 
