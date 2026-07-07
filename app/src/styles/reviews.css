@@ -1,0 +1,575 @@
+/* ===== REVIEWS: TABLÓN DE ANUNCIOS =====*/
+
+.reviews-section {
+  background-color: #f0ece5;
+  background-image:
+    linear-gradient(45deg, rgba(46,106,121,0.05) 25%, transparent 25%, transparent 75%, rgba(46,106,121,0.05) 75%),
+    linear-gradient(-45deg, rgba(46,106,121,0.05) 25%, transparent 25%, transparent 75%, rgba(46,106,121,0.05) 75%);
+  background-size: 80px 80px;
+  padding: clamp(2rem,4vw,4rem) clamp(0.75rem,2vw,2rem);
+  position: relative;
+  overflow: visible;
+  z-index: 0
+}
+
+.reviews-section::before,
+.reviews-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24px;
+  pointer-events: none;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 97.5% 0, 95% 100%, 92.5% 0, 90% 100%, 87.5% 0, 85% 100%, 82.5% 0, 80% 100%, 77.5% 0, 75% 100%, 72.5% 0, 70% 100%, 67.5% 0, 65% 100%, 62.5% 0, 60% 100%, 57.5% 0, 55% 100%, 52.5% 0, 50% 100%, 47.5% 0, 45% 100%, 42.5% 0, 40% 100%, 37.5% 0, 35% 100%, 32.5% 0, 30% 100%, 27.5% 0, 25% 100%, 22.5% 0, 20% 100%, 17.5% 0, 15% 100%, 12.5% 0, 10% 100%, 7.5% 0, 5% 100%, 2.5% 0, 0 100%)
+}
+
+.reviews-section::before { top: 0; background: #0b2e36 }
+.reviews-section::after  { bottom: 0; transform: scaleY(-1); background: linear-gradient(135deg, #0f3b45, #1a4a56, #0f3b45) }
+
+/* ---- Marco exterior del tablón ---- */
+.board-outer {
+  max-width: 1700px;
+  margin: 0 auto
+}
+
+.board-frame {
+  background: #dfe6e9;
+  border-radius: 8px;
+  padding: clamp(8px,1vw,14px);
+  box-shadow:
+    0 2px 0 #b2bec3,
+    0 4px 10px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    inset 0 -1px 0 rgba(0,0,0,0.1);
+  border: 1px solid #b2bec3;
+  position: relative
+}
+
+/* ---- Superficie blanca del tablón ---- */
+.board-inner {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: clamp(1.5rem,3vw,3rem) clamp(1.2rem,3vw,3rem) clamp(1.5rem,3vw,2.5rem);
+  position: relative;
+  min-height: 400px;
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(245,246,250,0.3) 50%, rgba(220,221,225,0.15) 100%);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
+  z-index: 1;
+  overflow: hidden
+}
+
+/* ---- Dibujos decorativos del pizarrón ---- */
+.board-doodle {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.12;
+  z-index: 0
+}
+
+.board-doodle-1 {
+  width: clamp(100px, 18vw, 200px);
+  top: 1%;
+  right: 4%;
+  transform: rotate(-8deg);
+  filter: sepia(1) saturate(5) hue-rotate(150deg) brightness(0.8)
+}
+
+.board-doodle-2 {
+  width: clamp(120px, 20vw, 220px);
+  bottom: -4%;
+  left: 3%;
+  transform: scaleX(-1) rotate(2deg);
+  filter: sepia(1) saturate(5) hue-rotate(180deg) brightness(0.8)
+}
+
+/* ---- Estrellas dibujadas por el pizarrón ---- */
+.board-star {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: clamp(40px, 7vw, 70px)
+}
+
+.board-star-1 {
+  top: 5%;
+  left: 4%;
+  transform: rotate(-12deg)
+}
+
+.board-star-2 {
+  top: 5%;
+  right: 28%;
+  transform: rotate(18deg)
+}
+
+.board-star-3 {
+  bottom: 5%;
+  right: 4%;
+  transform: rotate(-5deg)
+}
+
+.board-star-4 {
+  bottom: 5%;
+  left: 28%;
+  transform: rotate(25deg)
+}
+
+.board-star-5 {
+  top: 50%;
+  left: 2%;
+  transform: rotate(-20deg)
+}
+
+/* ---- Mensajes dibujados ---- */
+.board-msg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0
+}
+
+.board-msg-2 {
+  width: clamp(100px, 15vw, 150px);
+  top: 10%;
+  left: 14%;
+  transform: rotate(2deg)
+}
+
+.board-msg-3 {
+  width: clamp(110px, 17vw, 170px);
+  bottom: 5%;
+  left: 68%;
+  transform: rotate(-4deg)
+}
+
+/* ---- Repisa del pizarrón (chiquita) ---- */
+.board-tray-new {
+  width: 100%;
+  height: 18px;
+  background: linear-gradient(180deg, #e8ecf0 0%, #d0d7de 40%, #bcc5ce 100%);
+  border-radius: 0 0 6px 6px;
+  border: 1px solid #b2bec3;
+  border-top: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: relative
+}
+
+.tray-accessories {
+  position: absolute;
+  right: 30px;
+  bottom: 6px;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px
+}
+
+/* ---- FIBRONES PARADOS RECTOS (dentro de la repisa) ---- */
+.markers-standing {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 0
+}
+
+/* ---- BORRADOR 3D HORIZONTAL (recto, apoyado en la repisa) ---- */
+.eraser-on-tray {
+  width: 140px;
+  height: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
+  z-index: 5
+}
+
+/* Tapa metálica con brillo y textura */
+.eraser-cap-ot {
+  height: 10px;
+  background: linear-gradient(180deg, #909090 0%, #777 15%, #666 35%, #555 55%, #484848 75%, #3a3a3a 100%);
+  border-radius: 5px 5px 0 0;
+  border-bottom: 2px solid #222;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.5),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    inset 3px 0 0 rgba(255,255,255,0.15),
+    inset -3px 0 0 rgba(255,255,255,0.08);
+  position: relative
+}
+
+/* Reflejo metálico en la tapa */
+.eraser-cap-ot::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  border-radius: 50%
+}
+
+/* Cuerpo principal con textura de plástico */
+.eraser-body-ot {
+  height: 26px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.15) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.15) 100%),
+    linear-gradient(180deg, #555 0%, #484848 8%, #3a3a3a 20%, #2e2e2e 40%, #252525 65%, #1c1c1c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.1),
+    inset 0 -2px 0 rgba(0,0,0,0.25)
+}
+
+/* Línea de desgaste en el cuerpo */
+.eraser-body-ot::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)
+}
+
+.eraser-label-ot {
+  color: #b0b0b0;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1
+}
+
+/* Fieltro con textura suave */
+.eraser-felt-ot {
+  height: 12px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.2) 0%, transparent 5%, transparent 95%, rgba(0,0,0,0.2) 100%),
+    linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 40%, #151515 100%);
+  border-radius: 0 0 5px 5px;
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,0.3)
+}
+
+/* ---- FIBRONES (clases base) ---- */
+.marker-standing {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+/* Punta del fibron (arriba, apuntando hacia arriba) */
+.ms-tip {
+  width: 10px;
+  height: 14px;
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -1px 2px rgba(0,0,0,0.2);
+  clip-path: polygon(0 100%, 100% 100%, 85% 0, 15% 0)
+}
+
+/* Cuerpo del fibron (largo, vertical, cilíndrico) */
+.ms-body {
+  width: 16px;
+  height: 70px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  background: #d8d8d8
+}
+
+/* Franja de color en el cuerpo (no toca punta ni tapa) */
+.ms-body::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  z-index: 1
+}
+
+/* Reflejo sutil en el cuerpo */
+.ms-body::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 2px;
+  height: 90%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+  border-radius: 50%
+}
+
+/* Tapa del fibron (abajo, apoyada en la repisa) */
+.ms-cap {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px 2px 4px 4px;
+  position: relative;
+  z-index: 2;
+  margin-top: -3px;
+  background: linear-gradient(180deg, #999 0%, #888 40%, #777 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.2)
+}
+
+/* Clip decorativo en la tapa */
+.ms-cap::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  height: 2px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 50%
+}
+
+/* ---- Dark (#0f3b45) ---- */
+.marker-dark .ms-cap {
+  background: linear-gradient(180deg, #1a4a56 0%, #0f3b45 40%, #0a2e36 80%, #071f27 100%)
+}
+.marker-dark .ms-body::before {
+  background: linear-gradient(90deg, #0a2e36 0%, #0f3b45 30%, #1a4a56 70%, #0f3b45 100%)
+}
+.marker-dark .ms-tip {
+  background: linear-gradient(180deg, #1a4a56 0%, #0f3b45 40%, #0a2e36 100%)
+}
+
+/* ---- Medium (#2e6a79) ---- */
+.marker-medium .ms-cap {
+  background: linear-gradient(180deg, #3a7d8a 0%, #2e6a79 40%, #255a66 80%, #1c4a54 100%)
+}
+.marker-medium .ms-body::before {
+  background: linear-gradient(90deg, #255a66 0%, #2e6a79 30%, #3a7d8a 70%, #2e6a79 100%)
+}
+.marker-medium .ms-tip {
+  background: linear-gradient(180deg, #3a7d8a 0%, #2e6a79 40%, #255a66 100%)
+}
+
+/* ---- Celeste (#3d8a9e) ---- */
+.marker-celeste .ms-cap {
+  background: linear-gradient(180deg, #4d9ab0 0%, #3d8a9e 40%, #2d7a8e 80%, #1d6a7e 100%)
+}
+.marker-celeste .ms-body::before {
+  background: linear-gradient(90deg, #2d7a8e 0%, #3d8a9e 30%, #4d9ab0 70%, #3d8a9e 100%)
+}
+.marker-celeste .ms-tip {
+  background: linear-gradient(180deg, #4d9ab0 0%, #3d8a9e 40%, #2d7a8e 100%)
+}
+
+/* ---- Amarillo (#d4b860) ---- */
+.marker-amarillo .ms-cap {
+  background: linear-gradient(180deg, #dcc070 0%, #d4b860 40%, #c8ac50 80%, #bca040 100%)
+}
+.marker-amarillo .ms-body::before {
+  background: linear-gradient(90deg, #c8ac50 0%, #d4b860 30%, #dcc070 70%, #d4b860 100%)
+}
+.marker-amarillo .ms-tip {
+  background: linear-gradient(180deg, #dcc070 0%, #d4b860 40%, #c8ac50 100%)
+}
+
+/* ---- BOTÓN VER MÁS ---- */
+.doodle-btn-wrap {
+  text-align: center;
+  margin-top: clamp(1.5rem, 2.5vw, 2.5rem);
+  position: relative;
+  z-index: 2
+}
+
+.reviews-btn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.8rem;
+  background: transparent;
+  border: 2px solid var(--brand);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--brand);
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease
+}
+
+.reviews-btn-more:hover {
+  background: var(--brand);
+  color: #fff
+}
+
+.reviews-btn-more:hover .reviews-btn-icon-google path {
+  stroke: #fff
+}
+
+.reviews-btn-text {
+  position: relative;
+  z-index: 2
+}
+
+.reviews-btn-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0
+}
+
+.reviews-btn-icon-hover {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, width 0.2s ease;
+  margin-left: 0.3rem
+}
+
+.reviews-btn-more:hover .reviews-btn-icon-hover {
+  opacity: 1;
+  width: 22px;
+  height: 22px;
+  margin-left: 0.5rem
+}
+
+/* ---- Nuevo Header de Pizarra ---- */
+.board-title-zone-new {
+  text-align: center;
+  margin-bottom: clamp(1.8rem, 3vw, 2.5rem);
+  padding: 0 clamp(0.5rem, 5vw, 4rem);
+  position: relative;
+  z-index: 2
+}
+
+.board-main-title-new {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: #0f3b45;
+  line-height: 1.1;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem
+}
+
+.board-main-title-new::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='10' viewBox='0 0 200 10'%3E%3Cpath d='M0 5 Q25 2, 50 5 T100 5 T150 5 T200 5' stroke='%232e6a79' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-size: 200px 10px
+}
+
+/* ---- Divisor ondulado (trazo de marcador) ---- */
+.board-divider-wrap {
+  width: 100%;
+  height: 16px;
+  margin: 0 0 clamp(1.5rem,2.5vw,2.5rem)
+}
+
+.board-divider-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block
+}
+
+/* ---- Grid de reseñas ---- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: clamp(0.8rem, 1.5vw, 1.4rem);
+  text-align: left;
+  position: relative;
+  z-index: 2
+}
+
+.reviews-loading {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 3rem 0
+}
+
+.reviews-loading div {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #7a8a9a;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.25rem
+}
+
+/* ---- Tarjetas estilo marcador escritas en la pizarra ---- */
+.r-card {
+  position: relative;
+  padding: 1.2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px dashed #2e6a79;
+  box-shadow: none;
+  transition: transform 0.22s ease;
+  overflow: hidden
+}
+
+.r-card::before {
+  display: none
+}
+
+.r-card .r-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.8rem;
+  position: relative;
+  z-index: 1
+}
+
+.r-card .r-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #3d8a9e !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0
+}
+
+.r-card .r-name {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1.35vw, 1.35rem);
+  color: #0f3b45;
+  line-height: 1.1
+}
+
+.r-card .r-stars {
+  color: var(--board-amarillo);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  line-height: 1.2
+}
+
+.r-card p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  color: #0f3b45;
+  line-height: 1.55;
+  margin: 0;
+  position: relative;
+  z-index: 1
+}

@@ -1,0 +1,276 @@
+/* ===== FOOTER ===== */
+.site-footer {
+  background: var(--brand-gradient);
+  position: relative;
+  overflow: hidden
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-gradient);
+  z-index: 1
+}
+
+.site-footer .hero-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 32px 32px
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  padding: 3.5rem 0 2rem;
+  position: relative;
+  z-index: 1
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem
+}
+
+.footer-logo-hero {
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
+.f-icon {
+  width: clamp(65px, 7vw, 95px);
+  height: clamp(65px, 7vw, 95px);
+  border-radius: 1.1rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), box-shadow 0.4s ease
+}
+
+.f-icon:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15)
+}
+
+.f-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  padding: 15%;
+  transform: scale(1.12)
+}
+
+.f-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem
+}
+
+.f-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  background: #fff;
+  font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+  color: var(--brand-light);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06)
+}
+
+.f-name {
+  font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-style: italic;
+  position: relative;
+  display: inline-block
+}
+
+.f-name::after {
+  content: '';
+  position: absolute;
+  bottom: clamp(2px, 0.3vw, 5px);
+  left: 0;
+  width: 100%;
+  height: clamp(3px, 0.3vw, 5px);
+  background: rgba(79, 174, 212, 0.25);
+  border-radius: 2px
+}
+
+.footer-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 340px
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.25rem
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.35s cubic-bezier(.34,1.56,.64,1)
+}
+
+.footer-social-link:hover {
+  border-color: #fff;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15)
+}
+
+.footer-social-link svg {
+  width: 19px;
+  height: 19px
+}
+
+.footer-nav h4,
+.footer-contact h4 {
+  color: #fff;
+  font-size: clamp(1.1rem, 1.4vw, 1.5rem);
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1.3rem;
+  letter-spacing: 0.03em;
+  position: relative;
+  padding-bottom: 0.7rem
+}
+
+.footer-nav h4::after,
+.footer-contact h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 2.5px;
+  background: var(--brand-light);
+  border-radius: 2px
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  list-style: none
+}
+
+.footer-nav li {
+  margin-bottom: 0.65rem
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block
+}
+
+.footer-nav a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--brand-light);
+  transition: width 0.3s ease
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  transform: translateX(4px)
+}
+
+.footer-nav a:hover::before {
+  width: 100%
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.8rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  transition: background 0.3s ease
+}
+
+.footer-contact li:hover {
+  background: rgba(255, 255, 255, 0.06)
+}
+
+.footer-contact li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--brand-light);
+  flex-shrink: 0;
+  transition: all 0.35s cubic-bezier(.34,1.56,.64,1)
+}
+
+.footer-contact li:hover svg {
+  transform: scale(1.2) rotate(-5deg);
+  color: #fff
+}
+
+.footer-contact a,
+.footer-contact span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  transition: all 0.3s ease
+}
+
+.footer-contact a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2)
+}
+
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  position: relative;
+  z-index: 1
+}
+
+.footer-bottom {
+  padding: 1.4rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1
+}
+
+.footer-bottom span {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em
+}

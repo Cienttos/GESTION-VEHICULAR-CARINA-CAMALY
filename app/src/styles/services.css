@@ -1,0 +1,282 @@
+/* ===== SERVICES ===== */
+.services-section {
+  background: #0b2e36;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(55deg, transparent, transparent 46px, rgba(142, 202, 230, 0.04) 46px, rgba(142, 202, 230, 0.04) 48px);
+  background-size: 68px 68px;
+  pointer-events: none;
+  z-index: 0
+}
+
+/* ===== SERVICES - NUEVO DISEÑO ===== */
+
+/* Layout principal: tarjetas en fila + camión a la DERECHA */
+.svc-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.svc-row + .svc-row {
+  margin-top: 1.5rem;
+}
+
+/* Camión - a la DERECHA, sin voltear */
+.svc-truck-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+  width: clamp(110px, 15vw, 220px);
+  order: 2;
+  align-self: flex-end;
+  padding-bottom: 26px;
+  margin-top: 1.5rem;
+}
+
+.svc-truck-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transform: scaleX(-1) scale(1.6);
+  display: block;
+}
+
+/* Fila de wrappers (tarjeta + ruedas) */
+.svc-cards-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 0.55rem;
+  flex: 1;
+  align-items: flex-end;
+  order: 1;
+}
+
+/* ===== ROW 2: INVERTIDA (camión a la izquierda) ===== */
+.svc-row-2 {
+  flex-direction: row;
+}
+
+.svc-row-2 .svc-cards-grid {
+  order: 2;
+}
+
+.svc-truck-left {
+  order: 1 !important;
+}
+
+.svc-truck-img-left {
+  transform: scaleX(1) scale(1.6);
+}
+
+/* Wrapper individual: tarjeta encima, ruedas abajo */
+.svc-card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+}
+
+/* TARJETA: outlined suave, sin redondeo */
+.svc-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  background: #ffffff;
+  border: 1.5px solid rgba(46, 106, 121, 0.45);
+  border-radius: 0;
+  color: #1a2a30;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  min-height: 72px;
+  overflow: hidden;
+}
+
+.svc-card:hover {
+  background: #f4fafc;
+  border-color: #2e6a79;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(11, 46, 54, 0.15);
+}
+
+/* Texto centrado */
+.svc-card-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  min-width: 0;
+}
+
+.svc-card h3 {
+  font-size: clamp(0.72rem, 0.98vw, 0.94rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #10242a;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
+/* Separador oculto */
+.svc-card-sep {
+  display: none;
+}
+
+/* Icono a la izquierda del texto */
+.svc-card-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+  width: auto;
+  order: -1;
+}
+
+.svc-card-right svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: #2e6a79;
+  flex-shrink: 0;
+}
+
+/* RUEDAS con chasis */
+.svc-card-wheels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 11px 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.svc-card-wheels::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.svc-card-wheel {
+  display: block;
+  position: relative;
+  width: clamp(24px, 2.6vw, 34px);
+  height: clamp(24px, 2.6vw, 34px);
+  border-radius: 50%;
+  background: #ffffff;
+  border: 6px solid #ffffff;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.svc-card-wheel::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #0b2e36;
+}
+
+/* Mobile */
+@media(max-width: 699px) {
+  .svc-row {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
+
+  .svc-truck-wrap {
+    order: 1;
+    width: clamp(80px, 32vw, 110px);
+    padding-bottom: 0;
+    align-self: center;
+  }
+
+  .svc-cards-grid {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .svc-row-2 .svc-cards-grid { order: 2; }
+
+  .svc-card-wrap { flex: none; }
+
+  .svc-card { min-height: 64px; }
+
+  .svc-card-left { padding: 0.55rem 0.35rem 0.5rem 0.45rem; }
+
+  .svc-card-right { width: 2rem; padding: 0.4rem; }
+
+  .svc-card-right svg { width: 0.9rem; height: 0.9rem; }
+}
+
+/* Tablet */
+@media(min-width: 700px) and (max-width: 1023px) {
+  .svc-row { gap: 1.25rem; padding: 0 1rem; }
+
+  .svc-truck-wrap { width: clamp(100px, 13vw, 160px); }
+
+  .svc-card { min-height: 62px; }
+}
+
+/* Desktop */
+@media(min-width: 1024px) {
+  .services-section { padding: 4rem 0; }
+
+  .svc-row { gap: 1.75rem; max-width: 1380px; }
+
+  .svc-truck-wrap { width: clamp(130px, 14vw, 210px); }
+
+  .svc-cards-grid { gap: 0.4rem; }
+
+  .svc-card { min-height: 80px; }
+}
+
+/* Monitor grande */
+@media(min-width: 1440px) {
+  .services-section { padding: 5rem 0; }
+
+  .svc-row { max-width: 1560px; gap: 2rem; }
+
+  .svc-truck-wrap { width: clamp(175px, 14vw, 250px); }
+
+  .svc-cards-grid { gap: 0.4rem; }
+
+  .svc-card { min-height: 88px; }
+
+  .svc-card-right { width: 2.7rem; }
+
+  .svc-card-right svg { width: 1.25rem; height: 1.25rem; }
+
+  .svc-card-wheel { width: 34px; height: 34px; }
+}

@@ -1,0 +1,550 @@
+/* ===== RESPONSIVE ===== */
+@media(max-width:968px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem
+  }
+
+  .footer-brand {
+    grid-column: 1/-1
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem
+  }
+
+  .title {
+    font-size: 2rem
+  }
+
+  .title-lg {
+    font-size: 2.2rem
+  }
+}
+
+@media(max-width:768px) {
+  header nav {
+    display: none
+  }
+
+  .hero .container {
+    flex-direction: column;
+    gap: 2rem
+  }
+
+  .hero-left {
+    text-align: center;
+    padding: 1rem 0
+  }
+
+  .hero-left h1 {
+    font-size: 2rem
+  }
+
+  .hero-left p {
+    margin: 0 auto 2rem
+  }
+
+  .hero-btns {
+    justify-content: center
+  }
+
+  .hero-right {
+    width: 100%
+  }
+
+  .device-wrapper {
+    max-width: 300px
+  }
+
+  .device-tablet {
+    transform: none !important
+  }
+
+  .float-card-1 {
+    right: -8%
+  }
+
+  .float-card-2 {
+    left: -6%
+  }
+
+  .ft-section {
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    padding: 0 !important
+  }
+
+  .ft-pinned-wrapper {
+    height: auto !important;
+    min-height: auto !important;
+    display: block !important;
+    background: #0b2e36 !important;
+    padding: 2rem 0 !important;
+    position: relative !important
+  }
+
+  .ft-pinned-wrapper>.container {
+    display: block !important
+  }
+
+  .ft-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem
+  }
+
+  .ft-right {
+    position: static;
+    height: auto !important;
+    min-height: auto !important
+  }
+
+  .timeline-viewport {
+    height: auto !important;
+    min-height: auto !important
+  }
+
+  .timeline-body {
+    min-height: auto !important
+  }
+
+  .timeline-step {
+    padding-left: 1rem !important
+  }
+
+  .timeline-steps {
+    gap: 1.4rem
+  }
+
+  .step-marker {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    border-width: 2.5px
+  }
+
+  .step-content {
+    padding: 0.5rem 0 0.5rem 0
+  }
+
+  .step-icon {
+    width: 1.2rem;
+    height: 1.2rem
+  }
+
+  .step-content h4 {
+    font-size: 1.15rem
+  }
+
+  .step-content p {
+    font-size: 0.8rem
+  }
+
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .tl-car-wrap {
+    height: 70px;
+    margin-top: 0.5rem
+  }
+
+  .tl-car {
+    bottom: 1px;
+    width: clamp(80px, 14vw, 100px)
+  }
+
+  .tl-line {
+    bottom: 0;
+    border-top-width: 1.5px
+  }
+
+  .about-section {
+    padding: 2.5rem 0.5rem;
+    clip-path: none
+  }
+
+  .about-desk {
+    min-height: auto;
+    padding: 2.5rem 0
+  }
+
+  .about-paper {
+    width: 88%
+  }
+
+  .about-paper-layer,
+  .about-folder-under {
+    display: none
+  }
+
+  .about-paper-top {
+    flex-direction: column;
+    align-items: center
+  }
+
+  .about-photo-wrap {
+    width: 140px
+  }
+
+  .about-info-col {
+    align-items: center;
+    text-align: center
+  }
+
+  .about-info-col .about-social-row {
+    justify-content: center
+  }
+
+  .about-name {
+    white-space: normal;
+    text-align: center
+  }
+
+  .about-subtitle {
+    white-space: normal;
+    text-align: center
+  }
+
+  .about-bio p {
+    text-align: center
+  }
+
+  .about-postit {
+    width: clamp(100px, 22vw, 130px);
+    aspect-ratio: 1/1;
+    padding: 0.6rem
+  }
+
+  .about-postit-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 0.55rem;
+    top: -4px;
+    left: -4px
+  }
+
+  .about-postit-num {
+    font-size: clamp(1rem, 3vw, 1.2rem)
+  }
+
+  .about-postit-label {
+    font-size: clamp(0.45rem, 1.2vw, 0.55rem)
+  }
+
+  .about-postit-1 {
+    top: 1%;
+    left: 1%
+  }
+
+  .about-postit-2 {
+    top: 20%;
+    left: 1%
+  }
+
+  .about-postit-3 {
+    top: 39%;
+    left: 1%
+  }
+
+  .about-postit-4 {
+    top: 1%;
+    right: 1%
+  }
+
+  .about-postit-5 {
+    top: 20%;
+    right: 1%
+  }
+
+  .about-postit-6 {
+    top: 39%;
+    right: 1%
+  }
+
+  .about-stats {
+    padding: 0.5rem 1rem;
+    justify-content: center
+  }
+
+  .about-footer {
+    padding: 0.5rem 1rem 0;
+    align-items: center
+  }
+
+  .about-contacts {
+    justify-content: center
+  }
+
+  .about-social {
+    justify-content: center
+  }
+
+  .reviews-section {
+    padding: 2.5rem 0.3rem
+  }
+
+  .chalkboard-wrap {
+    padding: 2.5rem 1.2rem 2rem
+  }
+
+  .chalk-title {
+    font-size: clamp(2rem, 7vw, 3.5rem)
+  }
+
+  .chalk-deco {
+    display: none
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr
+  }
+
+  /* Repisa en tablet */
+  .board-tray-new {
+    height: 16px
+  }
+
+  .tray-accessories {
+    right: 20px;
+    gap: 14px
+  }
+
+  .ms-cap {
+    width: 15px;
+    height: 13px
+  }
+
+  .ms-body {
+    width: 13px;
+    height: 55px
+  }
+
+  .ms-tip {
+    width: 8px;
+    height: 10px
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center
+  }
+
+  .footer-social {
+    justify-content: center
+  }
+
+  .footer-contact li {
+    justify-content: center
+  }
+
+  .section {
+    padding: 4rem 0
+  }
+}
+
+@media(max-width:480px) {
+  .hero-left h1 {
+    font-size: clamp(1.5rem, 8vw, 1.8rem)
+  }
+
+  .title {
+    font-size: 1.5rem
+  }
+
+  .container {
+    padding: 0 1rem
+  }
+
+  .about-section {
+    padding: 1.5rem 0.25rem
+  }
+
+  .about-desk {
+    min-height: auto;
+    padding: 1.5rem 0
+  }
+
+  .about-paper {
+    width: 93%
+  }
+
+  .about-paper-layer,
+  .about-folder-under {
+    display: none
+  }
+
+  .about-photo-wrap {
+    width: 110px
+  }
+
+  .about-name {
+    white-space: normal;
+    text-align: center
+  }
+
+  .about-subtitle {
+    white-space: normal;
+    text-align: center
+  }
+
+  .about-postit-1 {
+    top: 0;
+    left: 0;
+    padding: 0.3rem 0.35rem
+  }
+
+  .about-postit-2 {
+    top: 20%;
+    left: 0;
+    padding: 0.3rem 0.35rem
+  }
+
+  .about-postit-3 {
+    top: 40%;
+    left: 0;
+    padding: 0.3rem 0.35rem
+  }
+
+  .about-postit-4 {
+    top: 0;
+    right: 0;
+    padding: 0.3rem 0.35rem
+  }
+
+  .about-postit-5 {
+    top: 20%;
+    right: 0;
+    padding: 0.3rem 0.35rem
+  }
+
+  .about-postit-6 {
+    top: 40%;
+    right: 0;
+    padding: 0.3rem 0.35rem
+  }
+
+  .reviews-section {
+    padding: 2rem 0.15rem
+  }
+
+  .chalkboard-wrap {
+    padding: 2rem 1rem 1.5rem
+  }
+
+  .chalk-title {
+    font-size: clamp(1.8rem, 9vw, 3rem)
+  }
+
+  .reviews-grid {
+    gap: 0.9rem
+  }
+
+  .r-card {
+    padding: 1.25rem 1rem 1rem
+  }
+
+  .r-card .r-header {
+    align-items: flex-start
+  }
+
+  .r-card .r-name {
+    font-size: 1.15rem
+  }
+
+  .r-card p {
+    font-size: 1rem
+  }
+
+  /* Repisa más compacta en móvil */
+  .board-tray-new {
+    height: 14px
+  }
+
+  .tray-accessories {
+    right: 12px;
+    gap: 10px
+  }
+
+  .eraser-on-tray {
+    width: 95px;
+    height: 34px
+  }
+
+  .eraser-cap-ot {
+    height: 7px
+  }
+
+  .eraser-body-ot {
+    height: 18px
+  }
+
+  .eraser-label-ot {
+    font-size: 0.5rem
+  }
+
+  .eraser-felt-ot {
+    height: 8px
+  }
+
+  .markers-standing {
+    gap: 4px
+  }
+
+  .ms-cap {
+    width: 12px;
+    height: 11px
+  }
+
+  .ms-body {
+    width: 10px;
+    height: 45px
+  }
+
+  .ms-tip {
+    width: 7px;
+    height: 8px
+  }
+
+  .reviews-btn-more {
+    font-size: 1.3rem;
+    padding: 0.6rem 1.5rem
+  }
+
+  .reviews-btn-icon {
+    width: 18px;
+    height: 18px
+  }
+}
+
+@media(min-width:1400px) {
+  .hero .container {
+    max-width: 1400px
+  }
+
+  .hero-left {
+    max-width: 800px
+  }
+
+  .device-wrapper {
+    max-width: clamp(460px, 32vw, 680px)
+  }
+}
+
+@media(min-width:2000px) {
+  .hero .container {
+    max-width: 1600px
+  }
+
+  .hero-left {
+    max-width: 920px
+  }
+}
+
+/* ===== GSAP INIT HIDE ===== */
+.gsap-hide {
+  opacity: 0;
+  transform: translateY(30px)
+}

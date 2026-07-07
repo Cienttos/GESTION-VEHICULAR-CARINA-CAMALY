@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: auto;
+  background: var(--brand-gradient);
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--brand-gradient);
+  color: #1a1a2e;
+  overflow-x: hidden;
+  line-height: 1.6
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+ul {
+  list-style: none
+}
+
+:root {
+  --brand: #2e6a79;
+  --brand-light: #4faed4;
+  --brand-dark: #0f3b45;
+  --brand-gradient: linear-gradient(135deg, #0f3b45, #1a4a56, #0f3b45);
+  --brand-gradient-2: linear-gradient(135deg, #1a4a56, #2e6a79, #1a4a56);
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --radius: 1.25rem;
+  --radius-sm: 0.75rem;
+
+  /* Colores del pizarr├│n para fibrones y rese├▒as */
+  --board-dark: #0f3b45;
+  --board-medium: #2e6a79;
+  --board-celeste: #3d8a9e;
+  --board-amarillo: #d4b860;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.12)
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden
+}
+
+.section-sm {
+  padding: 4rem 0
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-light);
+  margin-bottom: 0.75rem
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem
+}
+
+.title-lg {
+  font-size: 3rem
+}
+
+.title .accent {
+  color: var(--brand-light)
+}
+
+.divider {
+  width: 4rem;
+  height: 3px;
+  background: var(--brand-light);
+  border-radius: 99px;
+  margin: 1rem auto
+}
+
+.divider-left {
+  margin: 1rem 0
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 36rem
+}
+
+.text-dark {
+  color: #5a6a7a
+}
+
+.dot-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0
+}
+
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none
+}
+
+.btn-primary {
+  background: var(--brand-light);
+  color: #fff
+}
+
+.btn-primary:hover {
+  background: #3d9abe;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 174, 212, 0.35)
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff
+}
+
+.btn-outline:hover {
+  border-color: var(--brand-light);
+  color: var(--brand-light);
+  transform: translateY(-2px)
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow)
+}

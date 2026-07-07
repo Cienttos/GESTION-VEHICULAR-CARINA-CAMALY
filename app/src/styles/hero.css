@@ -1,0 +1,507 @@
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: var(--brand-gradient);
+  padding-top: 5rem;
+  overflow: hidden
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to top,
+    transparent 0%,
+    rgba(11,46,54,0.05) 10%,
+    rgba(11,46,54,0.12) 20%,
+    rgba(11,46,54,0.22) 30%,
+    rgba(11,46,54,0.35) 40%,
+    rgba(11,46,54,0.5) 50%,
+    rgba(11,46,54,0.65) 60%,
+    rgba(11,46,54,0.78) 70%,
+    rgba(11,46,54,0.88) 80%,
+    rgba(11,46,54,0.95) 90%,
+    #0b2e36 100%
+  );
+  pointer-events: none;
+  z-index: 999
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(11,46,54,0.05) 10%,
+    rgba(11,46,54,0.12) 20%,
+    rgba(11,46,54,0.22) 30%,
+    rgba(11,46,54,0.35) 40%,
+    rgba(11,46,54,0.5) 50%,
+    rgba(11,46,54,0.65) 60%,
+    rgba(11,46,54,0.78) 70%,
+    rgba(11,46,54,0.88) 80%,
+    rgba(11,46,54,0.95) 90%,
+    #0b2e36 100%
+  );
+  pointer-events: none;
+  z-index: 1
+}
+
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 32px 32px
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 8rem);
+  width: 100%;
+  position: relative;
+  z-index: 1
+}
+
+.hero-left {
+  flex: 1;
+  padding: 3rem 0;
+  max-width: clamp(500px, 55vw, 800px)
+}
+
+.hero-left .logo-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: clamp(1.75rem, 2.5vw, 2.5rem)
+}
+
+.hero-left .logo-hero .l-icon {
+  width: clamp(80px, 8vw, 110px);
+  height: clamp(80px, 8vw, 110px);
+  border-radius: 1.25rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08)
+}
+
+.hero-left .logo-hero .l-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  padding: 15%;
+  transform: scale(1.12)
+}
+
+.hero-left .logo-hero .l-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem
+}
+
+.hero-left .logo-hero .l-text .l-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  background: #fff;
+  font-size: clamp(0.7rem, 0.75vw, 0.85rem);
+  color: var(--brand-light);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  line-height: 1.4
+}
+
+.hero-left .logo-hero .l-text span:last-child {
+  font-size: clamp(1.6rem, 2.4vw, 3.2rem);
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-style: italic;
+  position: relative;
+  display: inline-block
+}
+
+.hero-left .logo-hero .l-text span:last-child::after {
+  content: '';
+  position: absolute;
+  bottom: clamp(2px, 0.3vw, 6px);
+  left: 0;
+  width: 100%;
+  height: clamp(3px, 0.3vw, 5px);
+  background: rgba(79, 174, 212, 0.2);
+  border-radius: 99px
+}
+
+.hero-title-wrap {
+  position: relative;
+  margin-bottom: clamp(1rem, 1.5vw, 1.5rem)
+}
+
+.hero-accent-line {
+  display: block;
+  width: clamp(2rem, 3vw, 3.5rem);
+  height: clamp(3px, 0.25vw, 4px);
+  background: var(--brand-light);
+  border-radius: 99px;
+  margin-bottom: clamp(0.75rem, 1vw, 1.25rem);
+  opacity: 0.8
+}
+
+.hero-left h1 {
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.06;
+  letter-spacing: -0.03em
+}
+
+.hero-left h1 span {
+  color: var(--brand-light)
+}
+
+.hero-left p {
+  font-size: clamp(0.95rem, 1.1vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
+  max-width: clamp(24rem, 35vw, 44rem);
+  line-height: 1.7;
+  font-weight: 400
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap
+}
+
+.hero-btns .btn {
+  font-size: clamp(0.85rem, 0.9vw, 1rem);
+  padding: clamp(0.7rem, 0.8vw, 0.95rem) clamp(1.5rem, 1.8vw, 2.2rem)
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: clamp(300px, 38vw, 650px)
+}
+
+.device-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: clamp(320px, 42vw, 720px);
+  aspect-ratio: 4/3;
+  perspective: clamp(800px, 80vw, 1400px);
+  transform-style: preserve-3d
+}
+
+.device-shadow {
+  position: absolute;
+  bottom: clamp(-16%, -10vw, -8%);
+  left: 50%;
+  width: clamp(90%, 18vw, 100%);
+  height: clamp(5%, 2vw, 8%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.35), transparent 72%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(clamp(10px, 1.2vw, 18px));
+  transform: translateX(-50%)
+}
+
+.device-tablet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(1rem, 1.5vw, 2rem);
+  background: linear-gradient(145deg, #2c2c2e, #1c1c1e);
+  padding: clamp(7px, 0.6vw, 12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transform-style: preserve-3d;
+  transform: rotateX(2deg) rotateY(-4deg)
+}
+
+.tablet-bezel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(0.7rem, 1vw, 1.3rem);
+  overflow: hidden;
+  background: #000
+}
+
+.tablet-camera {
+  position: absolute;
+  top: clamp(6px, 0.5vw, 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(6px, 0.4vw, 8px);
+  height: clamp(6px, 0.4vw, 8px);
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 5
+}
+
+.tablet-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(0.6rem, 0.8vw, 1.1rem);
+  overflow: hidden;
+  background: #0a0a0a;
+  position: relative
+}
+
+.tablet-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)
+}
+
+.tablet-reflection {
+  position: absolute;
+  inset: 0;
+  border-radius: clamp(1rem, 1.5vw, 2rem);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 40%, transparent 60%, rgba(255, 255, 255, 0.03) 100%);
+  pointer-events: none;
+  z-index: 6
+}
+
+.hero-cars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  perspective: 1200px;
+  transition: transform 0.15s ease-out
+}
+
+.hero-cars .car-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 2.2/1
+}
+
+.hero-cars .car-anim img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: invert(1)
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.3);
+  animation: bounce 2s infinite;
+  z-index: 2;
+  cursor: pointer
+}
+
+.hero-scroll svg {
+  display: block
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0)
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(6px)
+  }
+}
+
+.deco-item {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform;
+  transition: transform 0.15s ease-out
+}
+
+.deco-plate {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #111;
+  border-radius: clamp(14px, 1vw, 20px);
+  background: #fff;
+  width: clamp(360px, 42vw, 600px)
+}
+
+.deco-plate .p-top {
+  background: #003da5;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 2vw, 32px);
+  padding: 0 clamp(10px, 0.8vw, 14px) 0 clamp(28px, 3vw, 44px);
+  height: clamp(48px, 4vw, 60px);
+  border-radius: clamp(12px, 0.8vw, 18px) clamp(12px, 0.8vw, 18px) 0 0
+}
+
+.deco-plate .p-merco {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+  transform: scale(7) translateY(-0.5px);
+  transform-origin: center center;
+  margin: 0 auto
+}
+
+.deco-plate .p-text {
+  flex: 1;
+  text-align: center;
+  font-size: clamp(0.65rem, 0.85vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  white-space: nowrap
+}
+
+.deco-plate .p-flag {
+  width: clamp(28px, 2.4vw, 38px);
+  height: clamp(18px, 1.6vw, 24px);
+  flex-shrink: 0;
+  border-radius: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.deco-plate .p-flag svg {
+  display: block;
+  width: 100%;
+  height: 100%
+}
+
+.deco-plate .p-body {
+  text-align: center;
+  padding: clamp(3px, 0.3vw, 6px) clamp(10px, 0.8vw, 14px) clamp(12px, 1vw, 16px);
+  background: #fff;
+  border-radius: 0 0 clamp(14px, 1vw, 20px) clamp(14px, 1vw, 20px);
+  overflow: hidden
+}
+
+.deco-plate .p-code {
+  font-size: clamp(3.2rem, 4.5vw, 5.5rem);
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.12em;
+  font-family: 'GL-Nummernschild-Eng', monospace;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1
+}
+
+.deco-svg {
+  color: rgba(255, 255, 255, 0.05);
+  width: clamp(36px, 3.5vw, 54px);
+  height: clamp(36px, 3.5vw, 54px);
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round
+}
+
+.deco-folder {
+  position: absolute;
+  width: clamp(170px, 18vw, 270px);
+  height: clamp(260px, 28vw, 420px)
+}
+
+.folder-body {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #c9b18c, #b89f7a, #a68d6a);
+  border: 2px solid #8a7254;
+  box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)
+}
+
+.folder-elastico {
+  position: absolute;
+  z-index: 2;
+  width: clamp(70px, 8vw, 120px);
+  height: 3px;
+  background: #1a1a1a
+}
+
+.folder-elastico.tr {
+  top: clamp(22px, 2.2vw, 38px);
+  right: -20px;
+  transform: rotate(45deg)
+}
+
+.folder-elastico.br {
+  bottom: clamp(22px, 2.2vw, 38px);
+  right: -20px;
+  transform: rotate(-45deg)
+}
+
+.folder-tape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  background: rgba(245, 235, 200, 0.92);
+  border: 1px solid rgba(200, 180, 140, 0.4);
+  border-radius: 1px;
+  padding: clamp(4px, 0.4vw, 7px) clamp(18px, 2vw, 30px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 3
+}
+
+.folder-tape span {
+  color: #2c1a0e;
+  font-size: clamp(14px, 1.5vw, 22px);
+  font-family: 'Segoe Script', 'Comic Sans MS', cursive;
+  font-weight: 700;
+  letter-spacing: 0.5px
+}

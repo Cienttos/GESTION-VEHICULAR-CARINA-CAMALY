@@ -1,0 +1,99 @@
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: clamp(0.6rem, 1vh, 1rem);
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  background: transparent
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 2.5vw, 3rem);
+  width: auto;
+  max-width: calc(100% - clamp(1.5rem, 4vw, 3rem));
+  padding: clamp(0.4rem, 0.5vw, 0.6rem) clamp(1rem, 1.5vw, 2rem);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  pointer-events: auto;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0
+}
+
+.logo-icon {
+  width: clamp(36px, 3vw, 44px);
+  height: clamp(36px, 3vw, 44px);
+  border-radius: clamp(0.4rem, 0.5vw, 0.6rem);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25)
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  padding: 4%;
+  transform: scale(2) translateY(1px);
+  filter: brightness(0) invert(1);
+  transition: filter 0.35s ease
+}
+
+.logo-icon img.nav-scrolled {
+  filter: none
+}
+
+nav {
+  display: flex;
+  gap: clamp(0.8rem, 1.2vw, 1.5rem)
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+  font-weight: 500;
+  transition: color 0.25s ease;
+  position: relative;
+  white-space: nowrap
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-light);
+  transition: width 0.25s ease
+}
+
+nav a:hover {
+  color: #fff
+}
+
+nav a:hover::after {
+  width: 100%
+}
