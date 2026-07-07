@@ -2542,20 +2542,41 @@ nav a:hover::after {
   display: block
 }
 
-/* ---- Grid de rese├▒as ---- */
+/* ---- Carrusel horizontal de reseñas ---- */
 .reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: clamp(0.8rem, 1.5vw, 1.4rem);
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 0.8rem);
   text-align: left;
   position: relative;
-  z-index: 2
+  z-index: 2;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 0.25rem 0.25rem 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #2e6a79 transparent;
+  flex: 1;
+  align-items: stretch
+}
+
+.reviews-grid::-webkit-scrollbar {
+  height: 5px
+}
+
+.reviews-grid::-webkit-scrollbar-track {
+  background: transparent
+}
+
+.reviews-grid::-webkit-scrollbar-thumb {
+  background: #2e6a79;
+  border-radius: 4px
 }
 
 .reviews-loading {
-  grid-column: 1/-1;
+  flex: 1;
   text-align: center;
-  padding: 3rem 0
+  padding: 3rem 0;
+  min-width: 100%
 }
 
 .reviews-loading div {
@@ -2567,16 +2588,107 @@ nav a:hover::after {
   font-size: 1.25rem
 }
 
+/* ---- Camión que arrastra reseñas ---- */
+.reviews-truck-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+  scrollbar-width: none;
+  -ms-overflow-style: none
+}
+
+.reviews-truck-wrap::-webkit-scrollbar {
+  display: none
+}
+
+.reviews-truck {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.08);
+  margin-right: 0.5rem;
+  min-width: 180px
+}
+
+.truck-body {
+  position: relative;
+  display: flex;
+  align-items: flex-end
+}
+
+.truck-img {
+  width: clamp(100px, 12vw, 160px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.15))
+}
+
+.truck-cargo-zone {
+  position: absolute;
+  top: 20%;
+  right: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none
+}
+
+.cargo-line {
+  width: 24px;
+  height: 2px;
+  background: #2e6a79;
+  border-radius: 2px;
+  opacity: 0.5
+}
+
+.truck-wheels {
+  display: flex;
+  gap: clamp(4px, 1vw, 10px);
+  margin-top: -4px
+}
+
+.truck-wheel {
+  width: clamp(18px, 2.5vw, 28px);
+  height: clamp(18px, 2.5vw, 28px);
+  border-radius: 50%;
+  background: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a252f;
+  animation: wheel-spin 1.2s linear infinite
+}
+
+.wheel-hub {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: #7f8c8d
+}
+
 /* ---- Tarjetas estilo marcador escritas en la pizarra ---- */
 .r-card {
   position: relative;
-  padding: 1.2rem;
+  padding: 0.7rem 0.8rem;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.4);
   border: 2px dashed #2e6a79;
   box-shadow: none;
   transition: transform 0.22s ease;
-  overflow: hidden
+  overflow: hidden;
+  flex-shrink: 0;
+  width: clamp(180px, 22vw, 260px);
+  scroll-snap-align: start
 }
 
 .r-card::before {
@@ -2586,15 +2698,15 @@ nav a:hover::after {
 .r-card .r-header {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  margin: 0 0 0.8rem;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
   position: relative;
   z-index: 1
 }
 
 .r-card .r-avatar {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #3d8a9e !important;
   display: flex;
@@ -2603,30 +2715,30 @@ nav a:hover::after {
   color: #fff;
   font-family: 'Patrick Hand', cursive;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   flex-shrink: 0
 }
 
 .r-card .r-name {
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: clamp(1.1rem, 1.35vw, 1.35rem);
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
   color: #0f3b45;
   line-height: 1.1
 }
 
 .r-card .r-stars {
   color: var(--board-amarillo);
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   letter-spacing: 1px;
   line-height: 1.2
 }
 
 .r-card p {
   font-family: 'Patrick Hand', cursive;
-  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  font-size: clamp(0.75rem, 1vw, 0.88rem);
   color: #0f3b45;
-  line-height: 1.55;
+  line-height: 1.4;
   margin: 0;
   position: relative;
   z-index: 1
@@ -3212,7 +3324,21 @@ nav a:hover::after {
   }
 
   .reviews-grid {
-    grid-template-columns: 1fr
+    gap: 0.5rem;
+    padding: 0.25rem 0.15rem 0.5rem
+  }
+
+  .reviews-truck {
+    min-width: 120px;
+    padding: 0.4rem 0.5rem 0.4rem 0.75rem
+  }
+
+  .truck-img {
+    width: clamp(70px, 14vw, 100px)
+  }
+
+  .r-card {
+    width: clamp(160px, 30vw, 220px)
   }
 
   /* Repisa en tablet */
@@ -3352,23 +3478,31 @@ nav a:hover::after {
   }
 
   .reviews-grid {
-    gap: 0.9rem
+    gap: 0.4rem;
+    padding: 0.2rem 0.1rem 0.4rem
+  }
+
+  .reviews-truck {
+    min-width: 80px;
+    padding: 0.3rem 0.4rem;
+    margin-right: 0.3rem
+  }
+
+  .truck-img {
+    width: clamp(50px, 18vw, 70px)
   }
 
   .r-card {
-    padding: 1.25rem 1rem 1rem
+    width: clamp(140px, 45vw, 200px);
+    padding: 0.5rem 0.6rem
   }
 
   .r-card .r-header {
     align-items: flex-start
   }
 
-  .r-card .r-name {
-    font-size: 1.15rem
-  }
-
   .r-card p {
-    font-size: 1rem
+    font-size: 0.75rem
   }
 
   /* Repisa m├ís compacta en m├│vil */
@@ -3454,6 +3588,11 @@ nav a:hover::after {
   .hero-left {
     max-width: 920px
   }
+}
+
+/* ---- Ruedas rotando ---- */
+@keyframes wheel-spin {
+  to { transform: rotate(360deg) }
 }
 
 /* ===== GSAP INIT HIDE ===== */
