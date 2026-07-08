@@ -278,6 +278,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 1rem;
   }
   .sp-h1 {
     font-family: 'Playfair Display', serif;
@@ -361,6 +362,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     position: relative;
     z-index: 10;
     width: 100%;
+    max-width: 1200px;
     padding: 2rem 1.5rem;
   }
   .sp-features-title {
@@ -420,24 +422,101 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   }
 
   /* ====== RESPONSIVE ====== */
-  @media (max-width: 1024px) {
+  @media (max-width: 1366px) {
+    .sp-hero {
+      padding: 5rem 2rem 3rem;
+    }
+    .sp-h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+    .sp-sub {
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+    }
+    .sp-desc {
+      font-size: clamp(0.85rem, 0.9vw, 0.95rem);
+      max-width: 480px;
+    }
+    .sp-features-title {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+    }
     .sp-grid {
-      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+    .sp-card {
+      padding: 1.5rem 1rem;
+    }
+    .sp-card-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 1.2rem;
+    }
+    .sp-card-title {
+      font-size: 0.95rem;
+    }
+    .sp-card-desc {
+      font-size: 0.78rem;
     }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
     .sp-hero {
-      padding: 5rem 1.2rem 3rem;
+      padding: 5rem 1.5rem 2.5rem;
+    }
+    .sp-h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+    .sp-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .sp-card {
+      padding: 1.2rem 0.8rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .sp-hero {
+      padding: 5rem 1rem 2rem;
+      height: auto;
+      min-height: 100vh;
+    }
+    .sp-h1 {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+    .sp-sub {
+      font-size: 1rem;
+    }
+    .sp-desc {
+      font-size: 0.85rem;
     }
     .sp-grid {
       grid-template-columns: 1fr;
-      gap: 0.6rem;
+      gap: 0.8rem;
     }
     .sp-card {
-      padding: 1rem 0.8rem;
+      padding: 1rem;
+    }
+    .sp-card-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
     }
     .sp-features-inline {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+      padding: 1.5rem 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .sp-hero {
+      padding: 4.5rem 0.8rem 1.5rem;
+    }
+    .sp-h1 {
+      font-size: 1.5rem;
+    }
+    .sp-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+    .sp-card {
+      padding: 0.8rem;
     }
   }
 
