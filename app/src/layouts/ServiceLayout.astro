@@ -11,7 +11,7 @@ interface Props {
 const siteUrl = 'https://gestionvehicularmdq.vercel.app';
 const {
   title = "Gestoría del Automotor - Mar del Plata | CC Gestión Vehicular",
-  description = "Gestoría del Automotor en Mar del Plata. Especialistas en transferencias, trámites vehiculares y gestión automotor. Más de 20 años de experiencia.",
+  description = "Gestoría del Automotor en Mar del Plata. Especialistas en transferencias, trámites vehiculares y gestión automotor.",
   image = '/og-image.svg',
   url = siteUrl,
 } = Astro.props;
@@ -29,7 +29,7 @@ const ogImageURL = new URL(image, siteUrl);
   <!-- SEO Básico -->
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content="gestoría del automotor mar del plata, gestión vehicular Mar del Plata, transferencias vehiculares, trámites automotores, informe de dominio, denuncia de venta, verificación policial, alta y baja de motor, cancelación de prenda, consulta de legajo" />
+  <meta name="keywords" content="gestoría del automotor mar del plata, gestión vehicular Mar del Plata, transferencias vehiculares, trámites automotores, informe de dominio, denuncia de venta, verificación policial" />
   <meta name="author" content="Carina Camaly" />
   <link rel="canonical" href={canonicalURL} />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -67,7 +67,7 @@ const ogImageURL = new URL(image, siteUrl);
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@700&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@700&family=Caveat:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -106,40 +106,23 @@ const ogImageURL = new URL(image, siteUrl);
     "areaServed": {
       "@type": "City",
       "name": "Mar del Plata"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios de Gestoría Vehicular",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Transferencia del Automotor"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Informe de Dominio"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Informe de Infracciones"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consulta de Legajo"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cancelación de Prenda"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Denuncia de Venta"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Baja para Compañías de Seguros"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cambio de Radicación"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Resolución de Infracciones"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Verificación Policial y Grabado"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Inscripción Inicial"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Alta y Baja de Motor"}}
-      ]
     }
   })} />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #0b2e36;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
 </head>
 <body>
   <slot />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" is:inline></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" is:inline></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" is:inline></script>
-  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js" is:inline></script>
-  <script src="/src/scripts/base.js" is:inline></script>
-  <script src="/src/scripts/header.js" is:inline></script>
-  <script src="/src/scripts/hero.js" is:inline></script>
-  <script src="/src/scripts/features-timeline.js" is:inline></script>
-  <script src="/src/scripts/about.js" is:inline></script>
-  <script src="/src/scripts/services.js" is:inline></script>
-  <script src="/src/scripts/reviews.js" is:inline></script>
 </body>
 </html>

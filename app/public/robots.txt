@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gestionvehicularmdq.vercel.app/sitemap-index.xml
+
+# Disallow internal pages
+Disallow: /api/

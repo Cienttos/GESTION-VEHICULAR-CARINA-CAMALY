@@ -1,0 +1,654 @@
+---
+import ServiceLayout from '../layouts/serviceLayout.astro';
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  description2?: string;
+  featuresTitle: string;
+  features: Feature[];
+}
+
+const { title, subtitle, description, description2, featuresTitle, features } = Astro.props;
+
+const whatsappNumber = '5492236018006';
+const whatsappMessage = encodeURIComponent(`Hola Carina, quiero consultar por el servicio de ${title}`);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+---
+
+<ServiceLayout title={`${title} - Gestoría del Automotor en Mar del Plata`} description={description}>
+
+  <header class="sp-top-nav">
+    <div class="nav-pill">
+      <a href="/" class="logo" aria-label="Inicio">
+        <div class="logo-icon"><img src="/icono.png" alt="CC" /></div>
+      </a>
+      <nav>
+        <a href="/#inicio">Inicio</a>
+        <a href="/#proceso">Proceso</a>
+        <a href="/#about">Sobre mí</a>
+        <a href="/#servicios">Servicios</a>
+        <a href="/#resenas">Reseñas</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="sp-hero">
+    <div class="sp-hero-bg"></div>
+    <div class="sp-hero-content">
+      <h1 class="sp-h1">{title}</h1>
+      <p class="sp-sub">{subtitle}</p>
+      <div class="sp-divider"></div>
+      <p class="sp-desc" set:html={description}></p>
+      {description2 && <p class="sp-desc" set:html={description2}></p>}
+      <div class="sp-btn-group">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="sp-wsp-btn sp-wsp-link" aria-label="Consultar por WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar ahora
+        </a>
+      </div>
+    </div>
+
+    <div class="sp-features-inline">
+      <h2 class="sp-features-title">Qué incluye el servicio</h2>
+      <div class="sp-grid">
+        {features.map((f) => (
+          <article class="sp-card">
+            <div class="sp-card-icon">{f.icon}</div>
+            <h3 class="sp-card-title">{f.title}</h3>
+            <p class="sp-card-desc">{f.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ whatsappUrl }}>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.querySelector('.sp-wsp-link');
+      if (btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.open(whatsappUrl, '_blank');
+        });
+      }
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-hero">
+            <div class="f-icon">
+              <img src="/logo.svg" alt="CC Gestión Vehicular" />
+            </div>
+            <div class="f-text">
+              <span class="f-badge">Gestión Vehicular</span>
+              <span class="f-name">Carina Camaly</span>
+            </div>
+          </div>
+          <p class="footer-desc">Gestoría del Automotor en Mar del Plata. Más de 20 años de experiencia brindando soluciones rápidas, seguras y profesionales en cada trámite vehicular.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/people/Gestion-Vehicular-CC/100063633365893/" target="_blank" class="footer-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/gestoriadelautomotorcc/" target="_blank" class="footer-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://ar.linkedin.com/in/carina-camaly-2a50aa290" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="/#inicio">Inicio</a></li>
+            <li><a href="/#proceso">Proceso</a></li>
+            <li><a href="/#about">Sobre mí</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#resenas">Reseñas</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contacto</h4>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="https://wa.me/5492236018006" target="_blank">+54 9 223 601-8006</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:carinainspec@gmail.com">carinainspec@gmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Mar del Plata, Argentina</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CC Gestión Vehicular. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+</ServiceLayout>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(a), :global(button) { pointer-events: auto !important; }
+
+  /* ====== NAV (homepage style) ====== */
+  .sp-top-nav {
+    position: fixed;
+    top: clamp(0.6rem, 1vh, 1rem);
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    background: transparent;
+  }
+  .sp-top-nav :global(.nav-pill) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 2.5vw, 3rem);
+    width: auto;
+    max-width: calc(100% - clamp(1.5rem, 4vw, 3rem));
+    padding: clamp(0.4rem, 0.5vw, 0.6rem) clamp(1rem, 1.5vw, 2rem);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    pointer-events: auto;
+  }
+  .sp-top-nav :global(.logo) {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .sp-top-nav :global(.logo-icon) {
+    width: clamp(36px, 3vw, 44px);
+    height: clamp(36px, 3vw, 44px);
+    border-radius: clamp(0.4rem, 0.5vw, 0.6rem);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .sp-top-nav :global(.logo-icon img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+    padding: 4%;
+    transform: scale(2) translateY(1px);
+    filter: brightness(0) invert(1);
+  }
+  .sp-top-nav :global(nav) {
+    display: flex;
+    gap: clamp(0.8rem, 1.2vw, 1.5rem);
+  }
+  .sp-top-nav :global(nav a) {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    position: relative;
+    white-space: nowrap;
+  }
+  .sp-top-nav :global(nav a:hover) {
+    color: #fff;
+  }
+  @media(max-width: 768px) {
+    .sp-top-nav :global(.nav-pill) {
+      flex-wrap: wrap;
+      border-radius: 16px;
+      padding: 0.5rem 0.8rem;
+      max-width: calc(100% - 1.5rem);
+    }
+    .sp-top-nav :global(nav) {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      margin-top: 0.4rem;
+    }
+    .sp-top-nav :global(nav.is-open) { display: flex; }
+    .sp-top-nav :global(nav a) {
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .sp-top-nav :global(nav a:last-child) { border-bottom: none; }
+  }
+
+  /* ====== HERO ====== */
+  .sp-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #0b2e36 0%, #133a4a 50%, #0b2e36 100%);
+    padding: 6rem 1.5rem 4rem;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .sp-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      repeating-linear-gradient(55deg, transparent, transparent 46px, rgba(142,202,230,0.025) 46px, rgba(142,202,230,0.025) 48px);
+    background-size: 24px 24px, 68px 68px;
+    pointer-events: none;
+  }
+  .sp-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sp-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.4rem;
+    color: #fff;
+  }
+  .sp-sub {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0 0 1.2rem;
+    font-weight: 600;
+  }
+  .sp-divider {
+    width: 36px;
+    height: 2px;
+    background: #4faed4;
+    border-radius: 99px;
+    margin: 0 auto 1.2rem;
+    opacity: 0.5;
+  }
+  .sp-desc {
+    font-size: clamp(0.92rem, 1vw, 1.02rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 0.6rem;
+    max-width: 540px;
+  }
+  .sp-desc :global(strong) {
+    color: #4faed4;
+    font-weight: 600;
+  }
+
+  /* ====== WHATSAPP BUTTON ====== */
+  .sp-btn-group {
+    margin-top: 1.6rem;
+    position: relative;
+    z-index: 50;
+  }
+  .sp-wsp-link,
+  .sp-wsp-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 1rem 2.4rem !important;
+    background: #25D366 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 99px !important;
+    font-family: inherit !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    position: relative !important;
+    z-index: 50 !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.35) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    pointer-events: auto !important;
+  }
+  .sp-wsp-link:hover,
+  .sp-wsp-btn:hover {
+    background: #20ba5a !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 8px 36px rgba(37, 211, 102, 0.5) !important;
+  }
+  .sp-wsp-link:active,
+  .sp-wsp-btn:active {
+    transform: translateY(-1px) scale(0.98) !important;
+    box-shadow: 0 2px 12px rgba(37, 211, 102, 0.3) !important;
+  }
+
+  /* ====== FEATURES INLINE (inside hero) ====== */
+  .sp-features-inline {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+  .sp-features-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    text-align: center;
+    margin: 0 0 2rem;
+    color: #fff;
+  }
+  .sp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .sp-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .sp-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(79, 174, 212, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(79, 174, 212, 0.08);
+  }
+  .sp-card-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(79, 174, 212, 0.12);
+    border-radius: 12px;
+    font-size: 1.4rem;
+  }
+  .sp-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.3rem;
+  }
+  .sp-card-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.42);
+    margin: 0;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 1024px) {
+    .sp-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .sp-hero {
+      padding: 5rem 1.2rem 3rem;
+    }
+    .sp-grid {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+    .sp-card {
+      padding: 1rem 0.8rem;
+    }
+    .sp-features-inline {
+      margin-top: 2rem;
+    }
+  }
+
+  /* ====== FOOTER ====== */
+  .site-footer {
+    background: #0b2e36;
+    padding: 4rem 0 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(79, 174, 212, 0.15);
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  .site-footer .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+  .site-footer .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .footer-logo-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .f-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .f-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .f-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .site-footer :global(.f-icon) {
+    width: 48px !important;
+    height: 48px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 14px !important;
+  }
+  .site-footer :global(.f-icon img) {
+    filter: brightness(0) invert(1) !important;
+    transform: scale(1.12) !important;
+    padding: 4% !important;
+  }
+  .site-footer :global(.f-badge) {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block !important;
+    align-self: auto !important;
+  }
+  .site-footer :global(.f-name) {
+    font-size: 1.3rem !important;
+    color: #fff !important;
+    position: relative !important;
+    display: inline-block !important;
+  }
+  .site-footer :global(.f-name::after) {
+    display: none !important;
+  }
+  .site-footer :global(.footer-nav a) {
+    color: rgba(255, 255, 255, 0.65) !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+  }
+  .site-footer :global(.footer-nav a::after) {
+    display: none !important;
+  }
+  .site-footer :global(.footer-nav a::before) {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 1.5px !important;
+    background: var(--brand-light) !important;
+  }
+  .site-footer :global(.footer-nav a:hover) {
+    color: #fff !important;
+    transform: translateX(4px) !important;
+  }
+  .footer-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 1.2rem;
+  }
+  .footer-social {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .footer-social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+  .footer-social-link:hover {
+    border-color: #4faed4;
+    color: #4faed4;
+    transform: translateY(-2px);
+  }
+  .footer-nav h4,
+  .footer-contact h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0 0 1rem;
+    letter-spacing: 0.03em;
+  }
+  .footer-nav ul,
+  .footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-nav li,
+  .footer-contact li {
+    margin-bottom: 0.5rem;
+  }
+  .footer-nav a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-nav a:hover { color: #4faed4; }
+  .footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .footer-contact svg {
+    width: 15px;
+    height: 15px;
+    color: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+  }
+  .footer-contact a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-contact a:hover { color: #4faed4; }
+  .footer-contact span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.45);
+  }
+  .footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    margin: 2rem 0;
+  }
+  .footer-bottom {
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+  .footer-bottom span {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.03em;
+  }
+  @media (max-width: 768px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+    .footer-logo-hero { justify-content: center; }
+    .footer-social { justify-content: center; }
+    .footer-contact li { justify-content: center; }
+  }
+</style>
