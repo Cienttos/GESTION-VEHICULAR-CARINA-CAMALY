@@ -38,9 +38,9 @@ header {
 }
 
 .logo-icon {
-  width: clamp(30px, 2.5vw, 38px);
-  height: clamp(30px, 2.5vw, 38px);
-  border-radius: clamp(0.35rem, 0.4vw, 0.5rem);
+  width: clamp(26px, 2.2vw, 32px);
+  height: clamp(26px, 2.2vw, 32px);
+  border-radius: clamp(0.3rem, 0.35vw, 0.4rem);
   background: transparent;
   display: flex;
   align-items: center;
@@ -56,7 +56,6 @@ header {
   object-fit: contain;
   border-radius: inherit;
   padding: 4%;
-  transform: scale(2) translateY(1px);
   filter: brightness(0) invert(1);
   transition: filter 0.35s ease
 }
