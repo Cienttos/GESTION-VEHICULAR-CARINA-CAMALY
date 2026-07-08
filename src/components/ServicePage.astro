@@ -153,7 +153,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   /* ====== NAV (homepage style) ====== */
   .sp-top-nav {
     position: fixed;
-    top: clamp(0.6rem, 1vh, 1rem);
+    top: clamp(0.3rem, 0.5vh, 0.5rem);
     left: 0;
     width: 100%;
     z-index: 1000;
@@ -166,10 +166,10 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(1.5rem, 2.5vw, 3rem);
+    gap: clamp(0.8rem, 1.5vw, 1.5rem);
     width: auto;
-    max-width: calc(100% - clamp(1.5rem, 4vw, 3rem));
-    padding: clamp(0.4rem, 0.5vw, 0.6rem) clamp(1rem, 1.5vw, 2rem);
+    max-width: calc(100% - clamp(1rem, 3vw, 2rem));
+    padding: clamp(0.25rem, 0.3vw, 0.35rem) clamp(0.6rem, 1vw, 1rem);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
@@ -185,9 +185,9 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     flex-shrink: 0;
   }
   .sp-top-nav :global(.logo-icon) {
-    width: clamp(36px, 3vw, 44px);
-    height: clamp(36px, 3vw, 44px);
-    border-radius: clamp(0.4rem, 0.5vw, 0.6rem);
+    width: clamp(24px, 2.2vw, 30px);
+    height: clamp(24px, 2.2vw, 30px);
+    border-radius: clamp(0.3rem, 0.4vw, 0.4rem);
     background: transparent;
     display: flex;
     align-items: center;
@@ -202,16 +202,16 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     object-fit: contain;
     border-radius: inherit;
     padding: 4%;
-    transform: scale(6) translateY(1px);
+    transform: scale(2) translateY(1px);
     filter: brightness(0) invert(1);
   }
   .sp-top-nav :global(nav) {
     display: flex;
-    gap: clamp(0.8rem, 1.2vw, 1.5rem);
+    gap: clamp(0.5rem, 0.8vw, 1rem);
   }
   .sp-top-nav :global(nav a) {
     color: rgba(255, 255, 255, 0.8);
-    font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    font-size: clamp(0.5rem, 0.55vw, 0.6rem);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.25s ease;
@@ -256,7 +256,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     align-items: center;
     justify-content: center;
     background: linear-gradient(160deg, #0b2e36 0%, #133a4a 50%, #0b2e36 100%);
-    padding: 6rem 1.5rem 4rem;
+    padding: 3rem 1rem 2rem;
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -272,44 +272,44 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   .sp-hero-content {
     position: relative;
     z-index: 10;
-    max-width: 680px;
+    max-width: 500px;
     width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 0.8rem;
   }
   .sp-h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -0.02em;
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.2rem;
     color: #fff;
   }
   .sp-sub {
     font-family: 'Caveat', cursive;
-    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-size: clamp(0.55rem, 0.9vw, 0.75rem);
     color: rgba(255, 255, 255, 0.45);
-    margin: 0 0 1.2rem;
+    margin: 0 0 0.5rem;
     font-weight: 600;
   }
   .sp-divider {
-    width: 36px;
-    height: 2px;
+    width: 14px;
+    height: 1px;
     background: #4faed4;
     border-radius: 99px;
-    margin: 0 auto 1.2rem;
+    margin: 0 auto 0.5rem;
     opacity: 0.5;
   }
   .sp-desc {
-    font-size: clamp(0.92rem, 1vw, 1.02rem);
-    line-height: 1.7;
+    font-size: clamp(0.45rem, 0.5vw, 0.55rem);
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.55);
-    margin: 0 0 0.6rem;
-    max-width: 540px;
+    margin: 0 0 0.3rem;
+    max-width: 380px;
   }
   .sp-desc :global(strong) {
     color: #4faed4;
@@ -318,7 +318,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   /* ====== WHATSAPP BUTTON ====== */
   .sp-btn-group {
-    margin-top: 1.6rem;
+    margin-top: 0.6rem;
     position: relative;
     z-index: 50;
   }
@@ -326,14 +326,14 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   .sp-wsp-btn {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0.6rem !important;
-    padding: 1rem 2.4rem !important;
+    gap: 0.3rem !important;
+    padding: 0.4rem 1.2rem !important;
     background: #25D366 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 99px !important;
     font-family: inherit !important;
-    font-size: 1.1rem !important;
+    font-size: 0.55rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.01em !important;
     cursor: pointer !important;
@@ -348,7 +348,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   .sp-wsp-link:hover,
   .sp-wsp-btn:hover {
     background: #20ba5a !important;
-    transform: translateY(-3px) scale(1.02) !important;
+    transform: translateY(-2px) scale(1.02) !important;
     box-shadow: 0 8px 36px rgba(37, 211, 102, 0.5) !important;
   }
   .sp-wsp-link:active,
@@ -362,22 +362,22 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 1200px;
-    padding: 2rem 1.5rem;
+    max-width: 900px;
+    padding: 0.8rem 1rem;
   }
   .sp-features-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
     font-weight: 800;
     text-align: center;
-    margin: 0 0 2rem;
+    margin: 0 0 0.8rem;
     color: #fff;
   }
   .sp-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    max-width: 1400px;
+    gap: 0.5rem;
+    max-width: 1000px;
     margin: 0 auto;
   }
   .sp-card {
@@ -385,38 +385,38 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    padding: 0.6rem 0.5rem;
     text-align: center;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .sp-card:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(79, 174, 212, 0.25);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: 0 8px 32px rgba(79, 174, 212, 0.08);
   }
   .sp-card-icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 1rem;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(79, 174, 212, 0.12);
-    border-radius: 12px;
-    font-size: 1.4rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
   }
   .sp-card-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
+    font-size: 0.55rem;
     font-weight: 700;
     color: #fff;
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.15rem;
   }
   .sp-card-desc {
-    font-size: 0.82rem;
-    line-height: 1.5;
+    font-size: 0.42rem;
+    line-height: 1.4;
     color: rgba(255, 255, 255, 0.42);
     margin: 0;
   }
@@ -424,111 +424,111 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   /* ====== RESPONSIVE ====== */
   @media (max-width: 1366px) {
     .sp-top-nav :global(.logo-icon) {
-      width: clamp(26px, 2.2vw, 32px);
-      height: clamp(26px, 2.2vw, 32px);
+      width: clamp(22px, 2vw, 28px);
+      height: clamp(22px, 2vw, 28px);
     }
     .sp-top-nav :global(nav a) {
-      font-size: clamp(0.65rem, 0.65vw, 0.72rem);
+      font-size: clamp(0.55rem, 0.55vw, 0.65rem);
     }
     .sp-wsp-link,
     .sp-wsp-btn {
-      padding: 0.7rem 1.8rem !important;
-      font-size: 0.88rem !important;
+      padding: 0.35rem 1rem !important;
+      font-size: 0.5rem !important;
     }
     .sp-hero {
-      padding: 4rem 1.5rem 2rem;
+      padding: 2.5rem 1rem 1.5rem;
     }
     .sp-h1 {
-      font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+      font-size: clamp(0.75rem, 1.6vw, 1.2rem);
     }
     .sp-sub {
-      font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+      font-size: clamp(0.45rem, 0.7vw, 0.6rem);
     }
     .sp-desc {
-      font-size: clamp(0.72rem, 0.75vw, 0.8rem);
-      max-width: 400px;
+      font-size: clamp(0.38rem, 0.42vw, 0.48rem);
+      max-width: 340px;
     }
     .sp-features-title {
-      font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+      font-size: clamp(0.5rem, 0.8vw, 0.65rem);
     }
     .sp-grid {
-      gap: 0.75rem;
+      gap: 0.4rem;
     }
     .sp-card {
-      padding: 0.9rem 0.65rem;
+      padding: 0.45rem 0.4rem;
     }
     .sp-card-icon {
-      width: 34px;
-      height: 34px;
-      font-size: 0.95rem;
+      width: 24px;
+      height: 24px;
+      font-size: 0.6rem;
     }
     .sp-card-title {
-      font-size: 0.78rem;
+      font-size: 0.48rem;
     }
     .sp-card-desc {
-      font-size: 0.68rem;
+      font-size: 0.38rem;
     }
   }
   @media (max-width: 1024px) {
     .sp-hero {
-      padding: 5rem 1.5rem 2.5rem;
+      padding: 2rem 1rem 1.5rem;
     }
     .sp-h1 {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-size: clamp(0.7rem, 1.5vw, 1.1rem);
     }
     .sp-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      gap: 0.4rem;
     }
     .sp-card {
-      padding: 1.2rem 0.8rem;
+      padding: 0.5rem 0.4rem;
     }
   }
   @media (max-width: 768px) {
     .sp-hero {
-      padding: 5rem 1rem 2rem;
+      padding: 2rem 0.8rem 1.2rem;
       height: auto;
       min-height: 100vh;
     }
     .sp-h1 {
-      font-size: clamp(1.5rem, 6vw, 2rem);
+      font-size: clamp(0.65rem, 2.5vw, 0.9rem);
     }
     .sp-sub {
-      font-size: 1rem;
+      font-size: 0.5rem;
     }
     .sp-desc {
-      font-size: 0.85rem;
+      font-size: 0.4rem;
     }
     .sp-grid {
       grid-template-columns: 1fr;
-      gap: 0.8rem;
+      gap: 0.4rem;
     }
     .sp-card {
-      padding: 1rem;
+      padding: 0.4rem;
     }
     .sp-card-icon {
-      width: 40px;
-      height: 40px;
-      font-size: 1.1rem;
+      width: 22px;
+      height: 22px;
+      font-size: 0.55rem;
     }
     .sp-features-inline {
-      margin-top: 1.5rem;
-      padding: 1.5rem 1rem;
+      margin-top: 0.8rem;
+      padding: 0.6rem 0.5rem;
     }
   }
   @media (max-width: 480px) {
     .sp-hero {
-      padding: 4.5rem 0.8rem 1.5rem;
+      padding: 1.8rem 0.6rem 1rem;
     }
     .sp-h1 {
-      font-size: 1.5rem;
+      font-size: 0.6rem;
     }
     .sp-desc {
-      font-size: 0.8rem;
-      line-height: 1.6;
+      font-size: 0.35rem;
+      line-height: 1.5;
     }
     .sp-card {
-      padding: 0.8rem;
+      padding: 0.35rem;
     }
   }
 

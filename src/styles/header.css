@@ -56,7 +56,7 @@ header {
   object-fit: contain;
   border-radius: inherit;
   padding: 4%;
-  transform: scale(6) translateY(1px);
+  transform: scale(2) translateY(1px);
   filter: brightness(0) invert(1);
   transition: filter 0.35s ease
 }
