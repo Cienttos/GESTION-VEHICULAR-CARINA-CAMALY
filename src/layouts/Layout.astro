@@ -67,7 +67,12 @@ const ogImageURL = new URL(image, siteUrl);
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@700&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@700&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Patrick+Hand&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@700&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/icono.png" as="image" type="image/png" />
+  <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({

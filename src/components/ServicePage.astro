@@ -202,7 +202,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     object-fit: contain;
     border-radius: inherit;
     padding: 4%;
-    transform: scale(2) translateY(1px);
+    transform: scale(6) translateY(1px);
     filter: brightness(0) invert(1);
   }
   .sp-top-nav :global(nav) {
@@ -423,38 +423,50 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   /* ====== RESPONSIVE ====== */
   @media (max-width: 1366px) {
+    .sp-top-nav :global(.logo-icon) {
+      width: clamp(26px, 2.2vw, 32px);
+      height: clamp(26px, 2.2vw, 32px);
+    }
+    .sp-top-nav :global(nav a) {
+      font-size: clamp(0.65rem, 0.65vw, 0.72rem);
+    }
+    .sp-wsp-link,
+    .sp-wsp-btn {
+      padding: 0.7rem 1.8rem !important;
+      font-size: 0.88rem !important;
+    }
     .sp-hero {
-      padding: 5rem 2rem 3rem;
+      padding: 4rem 1.5rem 2rem;
     }
     .sp-h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.3rem, 2.8vw, 1.9rem);
     }
     .sp-sub {
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-size: clamp(0.8rem, 1.2vw, 0.95rem);
     }
     .sp-desc {
-      font-size: clamp(0.85rem, 0.9vw, 0.95rem);
-      max-width: 480px;
+      font-size: clamp(0.72rem, 0.75vw, 0.8rem);
+      max-width: 400px;
     }
     .sp-features-title {
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-size: clamp(0.85rem, 1.5vw, 1.05rem);
     }
     .sp-grid {
-      gap: 1.2rem;
+      gap: 0.75rem;
     }
     .sp-card {
-      padding: 1.5rem 1rem;
+      padding: 0.9rem 0.65rem;
     }
     .sp-card-icon {
-      width: 44px;
-      height: 44px;
-      font-size: 1.2rem;
-    }
-    .sp-card-title {
+      width: 34px;
+      height: 34px;
       font-size: 0.95rem;
     }
-    .sp-card-desc {
+    .sp-card-title {
       font-size: 0.78rem;
+    }
+    .sp-card-desc {
+      font-size: 0.68rem;
     }
   }
   @media (max-width: 1024px) {
