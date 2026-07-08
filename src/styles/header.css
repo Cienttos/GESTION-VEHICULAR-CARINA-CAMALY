@@ -38,9 +38,9 @@ header {
 }
 
 .logo-icon {
-  width: clamp(36px, 3vw, 44px);
-  height: clamp(36px, 3vw, 44px);
-  border-radius: clamp(0.4rem, 0.5vw, 0.6rem);
+  width: clamp(30px, 2.5vw, 38px);
+  height: clamp(30px, 2.5vw, 38px);
+  border-radius: clamp(0.35rem, 0.4vw, 0.5rem);
   background: transparent;
   display: flex;
   align-items: center;
