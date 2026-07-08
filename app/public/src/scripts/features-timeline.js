@@ -81,7 +81,9 @@ function animateTimeline() {
     }
 
     var mm = gsap.matchMedia();
-    mm.add("(min-width: 769px)", function() { makeScrub('.ft-pinned-wrapper', 'top 100%', 'top top', 0.5); });
+    mm.add("(min-width: 1200px) and (max-width: 1440px)", function() { makeScrub('.ft-pinned-wrapper', 'top 50%', 'top top', 0.5); });
+    mm.add("(min-width: 769px) and (max-width: 1199px)", function() { makeScrub('.ft-pinned-wrapper', 'top 100%', 'top top', 0.5); });
+    mm.add("(min-width: 1441px)", function() { makeScrub('.ft-pinned-wrapper', 'top 100%', 'top top', 0.5); });
     mm.add("(max-width: 768px)", function() { makeScrub('.timeline-body', 'top 100%', 'bottom 40%', 1); });
   }
 

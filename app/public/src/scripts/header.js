@@ -13,3 +13,27 @@ lenis.on('scroll', function(e) {
   if (y > 80 && !scrolled) { scrolled = true; updateNav(true); }
   else if (y <= 80 && scrolled) { scrolled = false; updateNav(false); }
 });
+
+/* Mobile nav — click logo icon to toggle */
+var mainNav = document.getElementById('main-nav');
+var logoLink = document.getElementById('nav-logo');
+if (logoLink && mainNav) {
+  logoLink.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      mainNav.classList.toggle('is-open');
+    }
+  });
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      mainNav.classList.remove('is-open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768 && mainNav.classList.contains('is-open')) {
+      if (!mainNav.contains(e.target) && !logoLink.contains(e.target)) {
+        mainNav.classList.remove('is-open');
+      }
+    }
+  });
+}

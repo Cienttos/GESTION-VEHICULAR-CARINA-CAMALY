@@ -21,6 +21,7 @@ function loadReviews() {
   var container = document.getElementById('reviews-container');
   if (!container) return;
   container.innerHTML = '';
+  var colsPerRow = 2;
   reviewsData.forEach(function(r, i) {
     var card = document.createElement('div');
     card.className = 'r-card';
@@ -30,9 +31,10 @@ function loadReviews() {
       '</div><div><div class="r-name">' + r.author_name + '</div><div class="r-stars">' + renderStars(r.rating) +
       '</div></div></div><p>' + r.text + '</p>';
     container.appendChild(card);
+    var rowDelay = Math.floor(i / colsPerRow) * 0.25;
     gsap.fromTo(card,
       { opacity: 0, scale: 0.85, y: 20 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.6, delay: i * 0.06, ease: 'back.out(1.8)', scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play reverse play reverse' } }
+      { opacity: 1, scale: 1, y: 0, duration: 0.6, delay: rowDelay, ease: 'back.out(1.8)', scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play reverse play reverse' } }
     );
   });
 }

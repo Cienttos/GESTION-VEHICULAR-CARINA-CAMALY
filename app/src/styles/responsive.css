@@ -1,546 +1,404 @@
-/* ===== RESPONSIVE ===== */
-@media(max-width:968px) {
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem
-  }
+/* ===== RESPONSIVE — Todos los dispositivos ===== */
 
-  .footer-brand {
-    grid-column: 1/-1
-  }
+/* ============================================================
+   LAPTOPS (max-width: 1366px)
+   ============================================================ */
+@media(max-width: 1366px) {
+  .container { max-width: 1050px }
+  .section { padding: 5rem 0 }
 
-  .hero-left h1 {
-    font-size: 2.5rem
-  }
+  /* Hero: keep 100vh, smaller gradients for 1366px */
+  .hero { min-height: 100vh; padding-top: 4rem }
+  .hero::before { height: 120px !important }
+  .hero::after { height: 120px !important }
+  .hero .container { gap: clamp(1.5rem, 3vw, 3.5rem) }
+  .hero-left { max-width: clamp(360px, 42vw, 560px); padding: 1.5rem 0; margin-left: clamp(2rem, 5vw, 6rem) }
+  .hero-left h1 { font-size: clamp(1.6rem, 3vw, 2.8rem) }
+  .hero-left p { font-size: clamp(0.85rem, 0.9vw, 1rem); max-width: clamp(18rem, 28vw, 34rem) }
+  .hero-left .logo-hero { gap: 0.7rem; margin-bottom: clamp(0.8rem, 1.2vw, 1.2rem) }
+  .hero-left .logo-hero .l-icon { width: clamp(45px, 4.5vw, 62px); height: clamp(45px, 4.5vw, 62px) }
+  .hero-left .logo-hero .l-text span:last-child { font-size: clamp(1.1rem, 1.6vw, 1.8rem) }
+  .hero-left .logo-hero .l-text .l-badge { font-size: clamp(0.5rem, 0.55vw, 0.65rem) }
+  .hero-left .logo-hero .l-text span:last-child::after { height: 2px; opacity: 0.15 }
+  .hero-accent-line { width: clamp(1.2rem, 1.8vw, 2rem) }
+  .hero-btns .btn { font-size: clamp(0.7rem, 0.75vw, 0.85rem); padding: clamp(0.5rem, 0.55vw, 0.7rem) clamp(1rem, 1.2vw, 1.5rem) }
+  .hero-right { min-height: clamp(180px, 24vw, 360px) }
+  .device-wrapper { max-width: clamp(200px, 25vw, 380px); perspective: clamp(500px, 50vw, 900px) }
+  .device-tablet { border-radius: clamp(0.5rem, 0.8vw, 1rem); padding: clamp(3px, 0.35vw, 7px) }
+  .tablet-bezel { border-radius: clamp(0.4rem, 0.6vw, 0.8rem) }
+  .hero-scroll { bottom: 1rem }
 
-  .title {
-    font-size: 2rem
-  }
+  /* Deco: HIDE on laptops — they overlap content */
+  .deco-item { display: none }
 
-  .title-lg {
-    font-size: 2.2rem
-  }
+  /* Features / Timeline */
+  .ft-pinned-wrapper { min-height: 100vh }
+  .ft-pinned-wrapper > .container { max-width: 1100px }
+  .ft-grid { gap: clamp(1.5rem, 3vw, 4rem) }
+  .ft-left .title { font-size: clamp(1.5rem, 2.8vw, 2.6rem) }
+  .ft-left .text { font-size: clamp(0.88rem, 1vw, 1.05rem) }
+  .ft-left .divider-left { width: clamp(2rem, 2.5vw, 3.5rem) }
+  .feature-cards { gap: clamp(0.6rem, 0.8vw, 1rem) }
+  .f-card { padding: clamp(1.1rem, 1.4vw, 1.8rem) clamp(0.9rem, 1.1vw, 1.5rem) }
+  .f-card .f-icon { width: clamp(40px, 3.2vw, 54px); height: clamp(40px, 3.2vw, 54px) }
+  .f-card .f-icon svg { width: clamp(18px, 1.5vw, 24px); height: clamp(18px, 1.5vw, 24px) }
+  .f-card h3 { font-size: clamp(0.9rem, 1vw, 1.2rem) }
+  .f-card p { font-size: clamp(0.7rem, 0.75vw, 0.9rem) }
+  .timeline-card { max-width: 300px }
+  .timeline-body { min-height: 18rem }
+  .timeline-steps { gap: 1rem }
+  .timeline-header .label { font-size: 0.72rem }
+  .step-marker { width: 1.8rem; height: 1.8rem; font-size: 0.72rem; border-width: 2.5px; margin-left: 0.4rem }
+  .step-content { padding: 0.3rem 0 0.3rem 0 }
+  .step-content h4 { font-size: 1rem }
+  .step-content p { font-size: 0.72rem }
+  .step-tags span { font-size: 0.58rem }
+  .step-head { margin-bottom: 0.2rem }
+  .tl-car-wrap { height: clamp(70px, 9vw, 100px) }
+  .tl-car { width: clamp(110px, 12vw, 160px) }
+
+  /* About */
+  .about-section { padding: 4rem 0.5rem }
+  .about-desk { max-width: 800px; min-height: clamp(320px, 40vw, 480px) }
+  .about-folder-under { left: 16%; right: 16% }
+  .about-paper { width: clamp(300px, 58%, 650px) }
+  .about-paper-inner { padding: clamp(1.8rem, 2.5vw, 2.5rem) clamp(1.5rem, 2vw, 2rem) clamp(1.5rem, 2vw, 2rem) }
+  .about-photo-wrap { width: clamp(75px, 7vw, 100px) }
+  .about-name { font-size: clamp(1.6rem, 2.8vw, 2.4rem) }
+  .about-subtitle { font-size: clamp(0.95rem, 1.3vw, 1.3rem) }
+  .about-bio p { font-size: clamp(1.05rem, 1.2vw, 1.25rem) }
+  .about-social-link { width: 34px; height: 34px }
+  .about-social-link svg { width: 15px; height: 15px }
+  .about-btn-draw { font-size: 1.05rem; padding: 0.3rem 0.8rem }
+  .about-postit { width: clamp(90px, 11vw, 125px); padding: clamp(0.45rem, 0.6vw, 0.75rem); aspect-ratio: 1/1 }
+  .about-postit-num { font-size: clamp(1.1rem, 1.6vw, 1.5rem) }
+  .about-postit-label { font-size: clamp(0.48rem, 0.7vw, 0.65rem) }
+  .about-postit-3 .about-postit-num { font-size: clamp(0.95rem, 1.4vw, 1.25rem) }
+  .about-postit-4 .about-postit-num { font-size: clamp(0.9rem, 1.3vw, 1.15rem) }
+  .about-postit-5 .about-postit-num { font-size: clamp(0.88rem, 1.25vw, 1.15rem) }
+  .about-postit-6 .about-postit-num { font-size: clamp(0.88rem, 1.25vw, 1.15rem) }
+  .about-postit-badge { width: 10px; height: 10px; font-size: 0.4rem; top: -2px; left: -2px }
+  .about-stats { padding: 0.3rem 0.5rem }
+
+  /* Services */
+  .svc-truck-wrap { width: clamp(80px, 10vw, 140px); margin-top: 0.5rem }
+  .svc-truck-img { transform: scaleX(-1) scale(1.7) translateY(9px) }
+  .svc-truck-img-left { transform: scaleX(1) scale(1.7) translateY(9px) }
+  .svc-card { min-height: 60px }
+  .svc-card h3 { font-size: clamp(0.6rem, 0.75vw, 0.78rem) }
+  .svc-card-wheel { width: clamp(16px, 1.8vw, 22px); height: clamp(16px, 1.8vw, 22px) }
+
+  /* Reviews */
+  .reviews-section { padding: clamp(1.5rem, 2.5vw, 2.5rem) clamp(0.3rem, 0.8vw, 0.8rem) }
+  .board-frame { padding: clamp(4px, 0.5vw, 8px); overflow: visible }
+  .board-inner { padding: clamp(1.2rem, 2vw, 2rem) clamp(0.8rem, 1.8vw, 1.8rem) clamp(1.2rem, 1.8vw, 1.6rem); min-height: 600px; overflow: visible }
+  .board-main-title-new { font-size: clamp(2.2rem, 4vw, 3.2rem) }
+  .board-divider-wrap { margin-bottom: clamp(0.8rem, 1.2vw, 1.2rem) }
+  .board-outer { max-width: 900px; margin: 0 auto }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: clamp(0.6rem, 0.9vw, 1rem); justify-items: center }
+  .r-card { padding: clamp(0.8rem, 1vw, 1.1rem); min-height: 180px; width: 100% }
+  .r-card .r-avatar { width: 32px; height: 32px; font-size: 0.75rem }
+  .r-card .r-name { font-size: clamp(1rem, 1.2vw, 1.3rem) }
+  .r-card .r-stars { font-size: clamp(1rem, 1.1vw, 1.2rem); letter-spacing: 2px }
+  .r-card p { font-size: clamp(0.85rem, 0.95vw, 1rem); line-height: 1.5 }
+  .board-star { width: clamp(25px, 4vw, 40px) }
+  .board-doodle-1 { width: clamp(50px, 8vw, 90px) }
+  .board-doodle-2 { width: clamp(60px, 10vw, 110px) }
+  .board-msg-2 { width: clamp(50px, 7vw, 75px) }
+  .board-msg-3 { width: clamp(55px, 8vw, 85px) }
+  .board-tray-new { height: 18px }
+  .tray-accessories { right: 16px; gap: 10px }
+  .markers-standing { display: flex }
+  .eraser-on-tray { width: 80px; height: 28px }
+  .eraser-cap-ot { height: 5px }
+  .eraser-body-ot { height: 15px }
+  .eraser-label-ot { font-size: 0.42rem }
+  .eraser-felt-ot { height: 7px }
+  .ms-cap { width: 9px; height: 8px }
+  .ms-body { width: 8px; height: 36px }
+  .ms-tip { width: 5px; height: 7px }
+  .reviews-btn-more { font-size: clamp(0.9rem, 1.1vw, 1.1rem); padding: 0.4rem 1rem }
+
+  /* Footer */
+  .footer-top { gap: 1.8rem; padding: 2.5rem 0 1.2rem }
+  .f-icon { width: clamp(42px, 4.5vw, 58px); height: clamp(42px, 4.5vw, 58px) }
+  .f-name { font-size: clamp(1.1rem, 1.4vw, 1.7rem) }
+  .footer-desc { font-size: 0.78rem; max-width: 250px }
+  .footer-social-link { width: 32px; height: 32px }
+  .footer-social-link svg { width: 15px; height: 15px }
+  .footer-nav h4, .footer-contact h4 { font-size: clamp(0.82rem, 1vw, 1.1rem) }
+  .footer-nav a, .footer-contact a, .footer-contact span { font-size: 0.78rem }
 }
 
-@media(max-width:768px) {
-  header nav {
-    display: none
-  }
-
-  .hero .container {
-    flex-direction: column;
-    gap: 2rem
-  }
-
-  .hero-left {
-    text-align: center;
-    padding: 1rem 0
-  }
-
-  .hero-left h1 {
-    font-size: 2rem
-  }
-
-  .hero-left p {
-    margin: 0 auto 2rem
-  }
-
-  .hero-btns {
-    justify-content: center
-  }
-
-  .hero-right {
-    width: 100%
-  }
-
-  .device-wrapper {
-    max-width: 300px
-  }
-
-  .device-tablet {
-    transform: none !important
-  }
-
-  .float-card-1 {
-    right: -8%
-  }
-
-  .float-card-2 {
-    left: -6%
-  }
-
-  .ft-section {
-    min-height: auto !important;
-    height: auto !important;
-    display: block !important;
-    padding: 0 !important
-  }
-
-  .ft-pinned-wrapper {
-    height: auto !important;
-    min-height: auto !important;
-    display: block !important;
-    background: #0b2e36 !important;
-    padding: 2rem 0 !important;
-    position: relative !important
-  }
-
-  .ft-pinned-wrapper>.container {
-    display: block !important
-  }
-
-  .ft-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem
-  }
-
-  .ft-right {
-    position: static;
-    height: auto !important;
-    min-height: auto !important
-  }
-
-  .timeline-viewport {
-    height: auto !important;
-    min-height: auto !important
-  }
-
-  .timeline-body {
-    min-height: auto !important
-  }
-
-  .timeline-step {
-    padding-left: 1rem !important
-  }
-
-  .timeline-steps {
-    gap: 1.4rem
-  }
-
-  .step-marker {
-    width: 2rem;
-    height: 2rem;
-    font-size: 0.8rem;
-    border-width: 2.5px
-  }
-
-  .step-content {
-    padding: 0.5rem 0 0.5rem 0
-  }
-
-  .step-icon {
-    width: 1.2rem;
-    height: 1.2rem
-  }
-
-  .step-content h4 {
-    font-size: 1.15rem
-  }
-
-  .step-content p {
-    font-size: 0.8rem
-  }
-
-  .feature-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr)
-  }
-
-  .tl-car-wrap {
-    height: 70px;
-    margin-top: 0.5rem
-  }
-
-  .tl-car {
-    bottom: 1px;
-    width: clamp(80px, 14vw, 100px)
-  }
-
-  .tl-line {
-    bottom: 0;
-    border-top-width: 1.5px
-  }
-
-  .about-section {
-    padding: 2.5rem 0.5rem;
-    clip-path: none
-  }
-
-  .about-desk {
-    min-height: auto;
-    padding: 2.5rem 0
-  }
-
-  .about-paper {
-    width: 88%
-  }
-
-  .about-paper-layer,
-  .about-folder-under {
-    display: none
-  }
-
-  .about-paper-top {
-    flex-direction: column;
-    align-items: center
-  }
-
-  .about-photo-wrap {
-    width: 140px
-  }
-
-  .about-info-col {
-    align-items: center;
-    text-align: center
-  }
-
-  .about-info-col .about-social-row {
-    justify-content: center
-  }
-
-  .about-name {
-    white-space: normal;
-    text-align: center
-  }
-
-  .about-subtitle {
-    white-space: normal;
-    text-align: center
-  }
-
-  .about-bio p {
-    text-align: center
-  }
-
-  .about-postit {
-    width: clamp(100px, 22vw, 130px);
-    aspect-ratio: 1/1;
-    padding: 0.6rem
-  }
-
-  .about-postit-badge {
-    width: 16px;
-    height: 16px;
-    font-size: 0.55rem;
-    top: -4px;
-    left: -4px
-  }
-
-  .about-postit-num {
-    font-size: clamp(1rem, 3vw, 1.2rem)
-  }
-
-  .about-postit-label {
-    font-size: clamp(0.45rem, 1.2vw, 0.55rem)
-  }
-
-  .about-postit-1 {
-    top: 1%;
-    left: 1%
-  }
-
-  .about-postit-2 {
-    top: 20%;
-    left: 1%
-  }
-
-  .about-postit-3 {
-    top: 39%;
-    left: 1%
-  }
-
-  .about-postit-4 {
-    top: 1%;
-    right: 1%
-  }
-
-  .about-postit-5 {
-    top: 20%;
-    right: 1%
-  }
-
-  .about-postit-6 {
-    top: 39%;
-    right: 1%
-  }
-
-  .about-stats {
-    padding: 0.5rem 1rem;
-    justify-content: center
-  }
-
-  .about-footer {
-    padding: 0.5rem 1rem 0;
-    align-items: center
-  }
-
-  .about-contacts {
-    justify-content: center
-  }
-
-  .about-social {
-    justify-content: center
-  }
-
-  .reviews-section {
-    padding: 2.5rem 0.3rem
-  }
-
-  .chalkboard-wrap {
-    padding: 2.5rem 1.2rem 2rem
-  }
-
-  .chalk-title {
-    font-size: clamp(2rem, 7vw, 3.5rem)
-  }
-
-  .chalk-deco {
-    display: none
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr
-  }
-
-  /* Repisa en tablet */
-  .board-tray-new {
-    height: 16px
-  }
-
-  .tray-accessories {
-    right: 20px;
-    gap: 14px
-  }
-
-  .ms-cap {
-    width: 15px;
-    height: 13px
-  }
-
-  .ms-body {
-    width: 13px;
-    height: 55px
-  }
-
-  .ms-tip {
-    width: 8px;
-    height: 10px
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr;
-    text-align: center
-  }
-
-  .footer-social {
-    justify-content: center
-  }
-
-  .footer-contact li {
-    justify-content: center
-  }
-
-  .section {
-    padding: 4rem 0
-  }
+/* ============================================================
+   TABLETS LANDSCAPE (max-width: 1024px)
+   ============================================================ */
+@media(max-width: 1024px) {
+  .container { max-width: 850px }
+  .section { padding: 4rem 0 }
+
+  .hero { min-height: 100vh }
+  .hero::before { height: 90px !important }
+  .hero::after { height: 90px !important }
+  .hero .container { gap: clamp(1.2rem, 2.2vw, 2rem) }
+  .hero-left { max-width: 100%; padding: 1rem 0; margin-left: 0 }
+  .hero-left h1 { font-size: clamp(1.3rem, 3vw, 2.2rem) }
+  .hero-left .logo-hero .l-icon { width: clamp(40px, 4vw, 52px); height: clamp(40px, 4vw, 52px) }
+  .hero-left .logo-hero .l-text span:last-child { font-size: clamp(0.95rem, 1.3vw, 1.4rem) }
+  .hero-right { min-height: clamp(150px, 20vw, 280px) }
+  .device-wrapper { max-width: clamp(180px, 22vw, 320px) }
+
+  .ft-grid { grid-template-columns: 1fr; gap: 1rem }
+  .ft-left .title { font-size: clamp(1.1rem, 2.2vw, 1.6rem) }
+  .timeline-card { max-width: 100% }
+  .timeline-body { min-height: auto !important }
+  .timeline-step { min-height: auto }
+  .feature-cards { flex-wrap: wrap; gap: 0.35rem }
+  .feature-cards .f-card { min-width: calc(50% - 0.18rem) }
+
+  .about-desk { max-width: 600px; min-height: auto }
+  .about-paper { width: clamp(220px, 52%, 460px) }
+  .about-paper-top { gap: clamp(0.5rem, 1vw, 1rem) }
+  .about-photo-wrap { width: clamp(60px, 6vw, 80px) }
+  .about-name { font-size: clamp(1.2rem, 2vw, 1.6rem) }
+  .about-postit { width: clamp(50px, 7.5vw, 78px) }
+  .about-postit-num { font-size: clamp(0.7rem, 1.1vw, 1rem) }
+
+  .svc-truck-wrap { width: clamp(50px, 7vw, 85px) }
+  .svc-card-wheel { width: clamp(14px, 1.5vw, 19px); height: clamp(14px, 1.5vw, 19px) }
+
+  .board-inner { min-height: 200px }
+  .reviews-grid { gap: 0.5rem }
+
+  .footer-top { gap: 1.5rem; padding: 2rem 0 1rem }
 }
 
-@media(max-width:480px) {
-  .hero-left h1 {
-    font-size: clamp(1.5rem, 8vw, 1.8rem)
-  }
+/* ============================================================
+   TABLETS PORTRAIT (max-width: 768px)
+   ============================================================ */
+@media(max-width: 768px) {
+  .section { padding: 3rem 0 }
 
-  .title {
-    font-size: 1.5rem
-  }
+  .hero { min-height: 100vh }
+  .hero::before { height: 65px !important }
+  .hero::after { height: 65px !important }
+  .hero .container { flex-direction: column; gap: 1rem }
+  .hero-left { text-align: center; padding: 0.8rem 0; max-width: 100% }
+  .hero-left h1 { font-size: clamp(1.4rem, 4.5vw, 1.9rem) }
+  .hero-left p { margin: 0 auto 1rem; font-size: clamp(0.82rem, 2.2vw, 0.95rem) }
+  .hero-btns { justify-content: center }
+  .hero-right { width: 100%; min-height: 160px }
+  .device-wrapper { max-width: 200px }
+  .device-tablet { transform: none !important }
 
-  .container {
-    padding: 0 1rem
-  }
+  /* HIDE ALL DECORATIONS */
+  .deco-item { display: none }
+  .float-card-1, .float-card-2 { display: none }
+  .tl-car-wrap { display: none }
 
-  .about-section {
-    padding: 1.5rem 0.25rem
-  }
+  .ft-section { min-height: auto !important; height: auto !important; display: block !important; padding: 0 !important }
+  .ft-pinned-wrapper { height: auto !important; min-height: auto !important; display: block !important; background: #0b2e36 !important; padding: 1.5rem 0 !important; position: relative !important }
+  .ft-pinned-wrapper > .container { display: block !important }
+  .ft-grid { grid-template-columns: 1fr; gap: 1rem }
+  .ft-left .title { font-size: clamp(1.2rem, 4vw, 1.7rem) }
+  .ft-left .text { font-size: clamp(0.8rem, 2vw, 0.9rem) }
+  .ft-right { position: static; height: auto !important; min-height: auto !important }
+  .timeline-viewport { height: auto !important; min-height: auto !important }
+  .timeline-body { min-height: auto !important }
+  .timeline-line, .timeline-fill { display: none }
+  .timeline-step { padding-left: 0.6rem !important; gap: 0.6rem; min-height: auto }
+  .timeline-steps { gap: 0.8rem }
+  .step-marker { width: 1.6rem; height: 1.6rem; font-size: 0.62rem; border-width: 2px }
+  .step-content { padding: 0.25rem 0 }
+  .step-icon { width: 0.9rem; height: 0.9rem }
+  .step-content h4 { font-size: 0.9rem }
+  .step-content p { font-size: 0.7rem }
+  .feature-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem }
+  .f-card { padding: 0.5rem 0.4rem }
+  .f-card h3 { font-size: 0.7rem }
+  .f-card p { font-size: 0.58rem }
 
-  .about-desk {
-    min-height: auto;
-    padding: 1.5rem 0
-  }
+  .about-section { padding: 2rem 0.3rem; clip-path: none }
+  .about-desk { min-height: auto; padding: 1.5rem 0 }
+  .about-paper { width: 88% }
+  .about-paper-layer, .about-folder-under { display: none }
+  .about-postit { display: none }
+  .about-paper-top { flex-direction: column; align-items: center; gap: 0.8rem }
+  .about-photo-wrap { width: 90px }
+  .about-info-col { align-items: center; text-align: center }
+  .about-info-col .about-social-row { justify-content: center }
+  .about-name { white-space: normal; text-align: center; font-size: clamp(1.2rem, 3.5vw, 1.5rem) }
+  .about-subtitle { white-space: normal; text-align: center; font-size: clamp(0.85rem, 2.2vw, 1rem) }
+  .about-bio p { text-align: center; font-size: clamp(0.82rem, 2.1vw, 0.9rem); line-height: 1.6 }
+  .about-social-link { width: 36px; height: 36px }
+  .about-social-link svg { width: 16px; height: 16px }
+  .about-btn-draw { font-size: 0.95rem; padding: 0.3rem 0.7rem }
+  .about-stats { padding: 0.25rem 0.5rem; justify-content: center }
+  .about-footer { padding: 0.25rem 0.5rem 0; align-items: center }
+  .about-contacts { justify-content: center }
+  .about-social { justify-content: center }
 
-  .about-paper {
-    width: 93%
-  }
+  .svc-row { flex-direction: column; gap: 0.8rem; padding: 0 0.75rem }
+  .svc-truck-wrap { order: 1; width: clamp(60px, 20vw, 90px); padding-bottom: 0; align-self: center }
+  .svc-cards-grid { order: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; width: 100% }
+  .svc-card { min-height: 56px }
+  .svc-card h3 { font-size: clamp(0.55rem, 1.5vw, 0.7rem) }
+  .svc-card-wheel { width: clamp(14px, 3.5vw, 18px); height: clamp(14px, 3.5vw, 18px) }
 
-  .about-paper-layer,
-  .about-folder-under {
-    display: none
-  }
+  .reviews-section { padding: 1.5rem 0.12rem }
+  .board-outer { max-width: 100% }
+  .board-inner { min-height: auto; overflow: visible }
+  .board-main-title-new { font-size: clamp(1.4rem, 5vw, 2rem); margin-bottom: 0.5rem }
+  .board-divider-wrap { display: none }
+  .board-star, .board-doodle, .board-msg { display: none }
+  .board-tray-new { display: none }
+  .reviews-grid { grid-template-columns: 1fr; gap: 0.6rem; padding: 0 0.3rem }
+  .r-card { padding: 0.7rem 0.6rem; min-height: auto; border-radius: 6px }
+  .r-card .r-avatar { width: 28px; height: 28px; font-size: 0.65rem }
+  .r-card .r-name { font-size: clamp(0.9rem, 2.5vw, 1rem) }
+  .r-card .r-stars { font-size: 0.9rem; letter-spacing: 2px }
+  .r-card p { font-size: clamp(0.78rem, 2vw, 0.85rem); line-height: 1.5 }
+  .doodle-btn-wrap { margin-top: 1rem }
+  .reviews-btn-more { font-size: clamp(0.9rem, 2.5vw, 1rem); padding: 0.5rem 1.2rem }
 
-  .about-photo-wrap {
-    width: 110px
-  }
-
-  .about-name {
-    white-space: normal;
-    text-align: center
-  }
-
-  .about-subtitle {
-    white-space: normal;
-    text-align: center
-  }
-
-  .about-postit-1 {
-    top: 0;
-    left: 0;
-    padding: 0.3rem 0.35rem
-  }
-
-  .about-postit-2 {
-    top: 20%;
-    left: 0;
-    padding: 0.3rem 0.35rem
-  }
-
-  .about-postit-3 {
-    top: 40%;
-    left: 0;
-    padding: 0.3rem 0.35rem
-  }
-
-  .about-postit-4 {
-    top: 0;
-    right: 0;
-    padding: 0.3rem 0.35rem
-  }
-
-  .about-postit-5 {
-    top: 20%;
-    right: 0;
-    padding: 0.3rem 0.35rem
-  }
-
-  .about-postit-6 {
-    top: 40%;
-    right: 0;
-    padding: 0.3rem 0.35rem
-  }
-
-  .reviews-section {
-    padding: 2rem 0.15rem
-  }
-
-  .chalkboard-wrap {
-    padding: 2rem 1rem 1.5rem
-  }
-
-  .chalk-title {
-    font-size: clamp(1.8rem, 9vw, 3rem)
-  }
-
-  .reviews-grid {
-    gap: 0.9rem
-  }
-
-  .r-card {
-    padding: 1.25rem 1rem 1rem
-  }
-
-  .r-card .r-header {
-    align-items: flex-start
-  }
-
-  .r-card .r-name {
-    font-size: 1.15rem
-  }
-
-  .r-card p {
-    font-size: 1rem
-  }
-
-  /* Repisa más compacta en móvil */
-  .board-tray-new {
-    height: 14px
-  }
-
-  .tray-accessories {
-    right: 12px;
-    gap: 10px
-  }
-
-  .eraser-on-tray {
-    width: 95px;
-    height: 34px
-  }
-
-  .eraser-cap-ot {
-    height: 7px
-  }
-
-  .eraser-body-ot {
-    height: 18px
-  }
-
-  .eraser-label-ot {
-    font-size: 0.5rem
-  }
-
-  .eraser-felt-ot {
-    height: 8px
-  }
-
-  .markers-standing {
-    gap: 4px
-  }
-
-  .ms-cap {
-    width: 12px;
-    height: 11px
-  }
-
-  .ms-body {
-    width: 10px;
-    height: 45px
-  }
-
-  .ms-tip {
-    width: 7px;
-    height: 8px
-  }
-
-  .reviews-btn-more {
-    font-size: 1.3rem;
-    padding: 0.6rem 1.5rem
-  }
-
-  .reviews-btn-icon {
-    width: 18px;
-    height: 18px
-  }
+  .footer-top { grid-template-columns: 1fr; text-align: center; gap: 1.5rem }
+  .footer-social { justify-content: center }
+  .footer-contact li { justify-content: center }
 }
 
-@media(min-width:1400px) {
-  .hero .container {
-    max-width: 1400px
-  }
+/* ============================================================
+   LARGE PHONES (max-width: 640px)
+   ============================================================ */
+@media(max-width: 640px) {
+  .container { padding: 0 0.8rem }
+  .section { padding: 2.5rem 0 }
 
-  .hero-left {
-    max-width: 800px
-  }
+  .hero { min-height: 100vh }
+  .hero::before { height: 50px !important }
+  .hero::after { height: 50px !important }
+  .hero-left h1 { font-size: clamp(1.2rem, 5.5vw, 1.6rem) }
+  .hero-left p { font-size: clamp(0.78rem, 2vw, 0.88rem) }
+  .hero-btns { flex-direction: column; align-items: stretch }
+  .hero-btns .btn { justify-content: center }
+  .hero-right { min-height: 140px }
+  .device-wrapper { max-width: 180px }
 
-  .device-wrapper {
-    max-width: clamp(460px, 32vw, 680px)
-  }
+  .ft-grid { gap: 0.7rem }
+  .ft-left .title { font-size: clamp(1.1rem, 4vw, 1.5rem) }
+  .ft-left .text { font-size: clamp(0.72rem, 1.8vw, 0.82rem) }
+  .feature-cards { grid-template-columns: 1fr 1fr; gap: 0.3rem }
+  .f-card { padding: 0.45rem 0.35rem }
+  .f-card h3 { font-size: 0.62rem }
+  .f-card p { font-size: 0.5rem }
+  .f-card .f-icon { width: 22px; height: 22px }
+  .f-card .f-icon svg { width: 10px; height: 10px }
+
+  .timeline-step { min-height: auto; gap: 0.5rem; padding-left: 0.2rem }
+  .step-marker { width: 1.4rem; height: 1.4rem; font-size: 0.55rem; border-width: 2px }
+  .step-content h4 { font-size: 0.8rem }
+  .step-content p { font-size: 0.6rem }
+  .step-tags span { font-size: 0.45rem; padding: 0.1rem 0.3rem }
+
+  .about-section { padding: 1.5rem 0.15rem }
+  .about-desk { min-height: auto; padding: 1rem 0 }
+  .about-paper { width: 95% }
+  .about-paper-inner { padding: 0.8rem 0.6rem 0.6rem }
+  .about-photo-wrap { width: 70px }
+  .about-name { font-size: clamp(1.05rem, 3vw, 1.3rem); white-space: normal; text-align: center }
+  .about-subtitle { font-size: clamp(0.78rem, 2vw, 0.9rem); white-space: normal; text-align: center }
+  .about-info-col { align-items: center; text-align: center }
+  .about-info-col .about-social-row { justify-content: center }
+  .about-bio p { font-size: 0.78rem; text-align: center }
+  .about-social-link { width: 30px; height: 30px }
+  .about-social-link svg { width: 13px; height: 13px }
+  .about-btn-draw { font-size: 0.85rem; padding: 0.25rem 0.6rem }
+
+  .svc-truck-wrap { width: clamp(50px, 14vw, 65px); padding-bottom: 0 }
+  .svc-card { min-height: 50px }
+  .svc-card h3 { font-size: clamp(0.5rem, 1.4vw, 0.65rem) }
+  .svc-card-wheel { width: 12px; height: 12px }
+
+  .board-main-title-new { font-size: clamp(1.2rem, 4.5vw, 1.6rem) }
+  .reviews-grid { gap: 0.45rem }
+  .r-card { padding: 0.6rem 0.5rem }
+  .r-card .r-avatar { width: 24px; height: 24px; font-size: 0.55rem }
+  .r-card .r-name { font-size: clamp(0.82rem, 2.2vw, 0.92rem) }
+  .r-card p { font-size: clamp(0.7rem, 1.8vw, 0.78rem) }
+  .reviews-btn-more { font-size: 0.85rem; padding: 0.4rem 0.9rem }
+
+  .footer-top { grid-template-columns: 1fr; gap: 1rem; text-align: center; padding: 1rem 0 0.7rem }
+  .footer-brand { align-items: center }
+  .footer-social { justify-content: center }
+  .footer-contact li { justify-content: center }
+  .footer-nav ul { text-align: center }
+  .footer-nav h4::after, .footer-contact h4::after { left: 50%; transform: translateX(-50%) }
+  .footer-bottom { padding: 0.5rem 0 }
 }
 
-@media(min-width:2000px) {
-  .hero .container {
-    max-width: 1600px
-  }
+/* ============================================================
+   SMALL PHONES (max-width: 480px)
+   ============================================================ */
+@media(max-width: 480px) {
+  .container { padding: 0 0.5rem }
 
-  .hero-left {
-    max-width: 920px
-  }
+  .hero::before { height: 38px !important }
+  .hero::after { height: 38px !important }
+  .hero-left h1 { font-size: clamp(1.05rem, 6vw, 1.4rem) }
+  .hero-left p { font-size: clamp(0.72rem, 1.8vw, 0.82rem) }
+  .title { font-size: 1.1rem }
+  .title-lg { font-size: 1.2rem }
+  .device-wrapper { max-width: 155px }
+
+  .ft-left .title { font-size: clamp(1rem, 4vw, 1.3rem) }
+  .feature-cards { grid-template-columns: 1fr }
+  .f-card { padding: 0.4rem 0.3rem }
+  .f-card h3 { font-size: 0.6rem }
+  .f-card p { font-size: 0.5rem }
+
+  .step-content h4 { font-size: 0.75rem }
+  .step-content p { font-size: 0.58rem }
+
+  .about-section { padding: 1.2rem 0.1rem }
+  .about-desk { padding: 0.7rem 0 }
+  .about-paper { width: 97% }
+  .about-photo-wrap { width: 75px }
+  .about-name { font-size: clamp(0.95rem, 2.8vw, 1.2rem); white-space: normal; text-align: center }
+  .about-subtitle { font-size: clamp(0.7rem, 1.8vw, 0.82rem); white-space: normal; text-align: center }
+  .about-bio p { font-size: 0.72rem }
+  .about-btn-draw { font-size: 0.8rem; padding: 0.2rem 0.5rem }
+  .about-social-link { width: 26px; height: 26px }
+  .about-social-link svg { width: 11px; height: 11px }
+
+  .svc-card h3 { font-size: clamp(0.48rem, 1.3vw, 0.6rem) }
+
+  .board-main-title-new { font-size: clamp(1.1rem, 4vw, 1.4rem) }
+  .reviews-grid { grid-template-columns: 1fr; gap: 0.4rem }
+  .r-card { padding: 0.55rem 0.45rem }
+  .r-card .r-avatar { width: 22px; height: 22px; font-size: 0.5rem }
+  .r-card .r-name { font-size: clamp(0.78rem, 2vw, 0.85rem) }
+  .r-card p { font-size: clamp(0.65rem, 1.7vw, 0.72rem); line-height: 1.45 }
+  .reviews-btn-more { font-size: 0.78rem; padding: 0.3rem 0.6rem }
+  .reviews-btn-icon { width: 14px; height: 14px }
+
+  .footer-top { gap: 0.8rem; padding: 0.8rem 0 0.5rem }
+  .footer-bottom { padding: 0.4rem 0 }
+}
+
+/* ============================================================
+   DESKTOPS GRANDES (min-width: 1400px)
+   ============================================================ */
+@media(min-width: 1400px) {
+  .hero .container { max-width: 1400px }
+  .hero-left { max-width: 800px }
+  .device-wrapper { max-width: clamp(460px, 32vw, 680px) }
+}
+
+/* ============================================================
+   ULTRAWIDE (min-width: 2000px)
+   ============================================================ */
+@media(min-width: 2000px) {
+  .hero .container { max-width: 1600px }
+  .hero-left { max-width: 920px }
 }
 
 /* ===== GSAP INIT HIDE ===== */

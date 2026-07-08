@@ -97,3 +97,33 @@ nav a:hover {
 nav a:hover::after {
   width: 100%
 }
+
+/* ---- Mobile Nav ---- */
+@media(max-width: 768px) {
+  .nav-pill {
+    flex-wrap: wrap;
+    border-radius: 16px;
+    padding: 0.5rem 0.8rem;
+    max-width: calc(100% - 1.5rem)
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 0.4rem
+  }
+
+  nav.is-open { display: flex }
+
+  nav a {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+  }
+
+  nav a:last-child { border-bottom: none }
+}

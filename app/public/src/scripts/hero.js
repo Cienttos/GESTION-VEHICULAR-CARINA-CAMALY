@@ -91,6 +91,16 @@ function initHeroCars() {
 
   function rnd(min, max) { return Math.random() * (max - min) + min; }
 
+  function getResponsiveSizes() {
+    var w = window.innerWidth;
+    if (w <= 480) return { roadH: 60, roadBW: 1, carW: 50, dashH: 1, dashGap: 30 };
+    if (w <= 640) return { roadH: 80, roadBW: 1.5, carW: 65, dashH: 1.5, dashGap: 35 };
+    if (w <= 768) return { roadH: 100, roadBW: 1.5, carW: 75, dashH: 1.5, dashGap: 38 };
+    if (w <= 1024) return { roadH: 130, roadBW: 2, carW: 90, dashH: 2, dashGap: 40 };
+    if (w <= 1366) return { roadH: 160, roadBW: 2, carW: 100, dashH: 2, dashGap: 42 };
+    return { roadH: 220, roadBW: 3, carW: 140, dashH: 3, dashGap: 50 };
+  }
+
   function createDiagonalRoad(x1, y1, x2, y2) {
     var dx = x2 - x1;
     var dy = y2 - y1;
@@ -101,8 +111,9 @@ function initHeroCars() {
     var angle = Math.atan2(py, px);
     var midX = (x1 + x2) / 2;
     var midY = (y1 + y2) / 2;
-    var roadH = 'clamp(190px,20vw,300px)';
-    var bW = 'clamp(2px,0.15vw,3px)';
+    var sz = getResponsiveSizes();
+    var roadH = sz.roadH + 'px';
+    var bW = sz.roadBW + 'px';
 
     var road = document.createElement('div');
     road.style.cssText = [
@@ -119,7 +130,7 @@ function initHeroCars() {
       'z-index:0'
     ].join(';');
 
-    var dashH = 'clamp(2px,0.2vw,4px)';
+    var dashH = sz.dashH + 'px';
     var line = document.createElement('div');
     line.style.cssText = [
       'position:absolute',
@@ -127,7 +138,7 @@ function initHeroCars() {
       'left:0',
       'width:100%',
       'height:' + dashH,
-      'background:repeating-linear-gradient(90deg,white 0,white 40px,transparent 40px,transparent 70px)',
+      'background:repeating-linear-gradient(90deg,white 0,white ' + sz.dashGap + 'px,transparent ' + sz.dashGap + 'px,transparent ' + (sz.dashGap + 28) + 'px)',
       'transform:translateY(-50%)',
       'pointer-events:none',
       'opacity:0.5'
@@ -139,7 +150,8 @@ function initHeroCars() {
   function createDiagonalCar(x1, y1, x2, y2, speed, reverse, startOffset) {
     var car = document.createElement('div');
     car.className = 'car-anim';
-    var w = 'clamp(110px,12vw,180px)';
+    var sz = getResponsiveSizes();
+    var w = sz.carW + 'px';
     startOffset = startOffset || 0;
 
     var sx = reverse ? x2 : x1;
@@ -161,8 +173,8 @@ function initHeroCars() {
     var roadAngle = Math.atan2(roadPy, roadPx);
     var perpX = -Math.sin(roadAngle);
     var perpY = Math.cos(roadAngle);
-    var roadWPx = Math.min(Math.max(190, window.innerWidth * 0.20), 300);
-    var off = roadWPx / window.innerWidth * 30;
+    var roadWPx = sz.roadH;
+    var off = roadWPx / window.innerWidth * 15;
     var loX = (reverse ? 1 : -1) * off * perpX;
     var loY = (reverse ? 1 : -1) * off * perpY * (window.innerWidth / window.innerHeight);
 
